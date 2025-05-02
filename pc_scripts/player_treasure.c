@@ -1,0 +1,4427 @@
+//Decompiled with MagicRDR v1.0
+//Function Count : 169
+//Statics Count : 138
+//Natives Count : 263
+//Parameters Count : 2
+
+#region Local Var
+	int iLocal_0 = 0;
+	var uLocal_1 = 0;
+	var uLocal_2 = 0;
+	var uLocal_3 = 0;
+	int iLocal_4 = 0;
+	int iLocal_5 = 0;
+	int iLocal_6 = 0;
+	int iLocal_7 = 0;
+	var uLocal_8 = 0;
+	var uLocal_9 = 0;
+	struct<2> Local_10 = { 0, 0 } ;
+	var uLocal_12 = 0;
+	var uLocal_13 = 0;
+	var uLocal_14 = 0;
+	struct<9> Local_15[6];
+	var uLocal_70 = 0;
+	var uLocal_71 = 0;
+	var uLocal_72 = 0;
+	var uLocal_73 = 0;
+	var uLocal_74 = 0;
+	var uLocal_75 = 0;
+	var uLocal_76 = 0;
+	var uLocal_77 = 0;
+	var uLocal_78 = 0;
+	var uLocal_79 = 0;
+	var uLocal_80 = 0;
+	var uLocal_81 = 0;
+	var uLocal_82 = 0;
+	var uLocal_83 = 0;
+	var uLocal_84 = 0;
+	var uLocal_85 = 0;
+	var uLocal_86 = 0;
+	var uLocal_87 = 0;
+	var uLocal_88 = 0;
+	var uLocal_89 = 0;
+	var uLocal_90 = 0;
+	var uLocal_91 = 0;
+	var uLocal_92 = 0;
+	var uLocal_93 = 0;
+	var uLocal_94 = 0;
+	var uLocal_95 = 0;
+	var uLocal_96 = 0;
+	var uLocal_97 = 0;
+	var uLocal_98 = 0;
+	var uLocal_99 = 0;
+	var uLocal_100 = 0;
+	var uLocal_101 = 0;
+	var uLocal_102 = 0;
+	var uLocal_103 = 0;
+	var uLocal_104 = 0;
+	var uLocal_105 = 0;
+	var uLocal_106 = 0;
+	var uLocal_107 = 0;
+	var uLocal_108 = 0;
+	var uLocal_109 = 0;
+	var uLocal_110 = 0;
+	var uLocal_111 = 0;
+	var uLocal_112 = 0;
+	var uLocal_113 = 0;
+	var uLocal_114 = 0;
+	var uLocal_115 = 0;
+	var uLocal_116 = 0;
+	var uLocal_117 = 0;
+	var uLocal_118 = 0;
+	var uLocal_119 = 0;
+	var uLocal_120 = 0;
+	var uLocal_121 = 0;
+	var uLocal_122 = 0;
+	var uLocal_123 = 0;
+	var uLocal_124 = 0;
+	int iLocal_125 = 0;
+	var uLocal_126 = 0;
+	var uLocal_127 = 0;
+	var uLocal_128 = 0;
+	var uLocal_129 = 0;
+	var uLocal_130 = 0;
+	int iLocal_131 = 0;
+	var uLocal_132 = 0;
+	bool bLocal_133 = false;
+	bool bLocal_134 = false;
+	var uLocal_135 = 0;
+	var uScriptParam_0 = 0;
+	var uScriptParam_1 = 0;
+#endregion
+
+void main() //Position: 0x0 / 0
+{
+	int iVar0;
+	var uVar1;
+	int iVar2;
+	int iVar3;
+	bool bVar4;
+	bool bVar5;
+	
+	iLocal_4 = 4294967295;
+	iLocal_5 = 0;
+	iLocal_6 = 0;
+	iLocal_7 = 0;
+	if (UNK_0xBBB2780E() && GRINGO_DEBUG_IS_SELECTED())
+	{
+		LOG_ERROR("User requested break (At GenericGringo startup)");
+	}
+	Function_168("STARTS");
+	Function_165(&uScriptParam_0);
+	iLocal_125 = 0;
+	Function_163(&uScriptParam_0, &iLocal_125);
+	while (IS_GRINGO_ACTIVE())
+	{
+		Function_162(&uScriptParam_0);
+		if (UNK_0xBBB2780E() && GRINGO_DEBUG_IS_SELECTED())
+		{
+			LOG_ERROR("User requested break (During GenericGringo loop)");
+		}
+		uVar1 = GRINGO_GET_MY_OBJECT_REF();
+		if (IS_OBJECT_VALID(&uVar1))
+		{
+			GET_OBJECT_POSITION(&uVar1, &uLocal_126);
+		}
+		iVar2 = 0;
+		bLocal_133 = false;
+		if (GRINGO_HAS_PENDING_MESSAGE())
+		{
+			iVar3 = 4294967295;
+			iVar0 = 0;
+			while (iVar0 < (iLocal_125 - 1))
+			{
+				if (&vLocal_15[iVar09] + 16 == GRINGO_GET_MSG_COMPONENT_CONTEXT())
+				{
+					iVar3 = iVar0;
+					iVar0 = iLocal_125;
+				}
+				iVar0++;
+			}
+			if (iVar3 >= 4294967295)
+			{
+				bVar4 = false;
+				bVar5 = false;
+				if (IS_ACTOR_VALID(GRINGO_GET_REQUESTING_ACTOR()))
+				{
+					bLocal_133 = true;
+				}
+				switch (GRINGO_GET_MESSAGE_TYPE())
+				{
+					case 0x00000000:
+						if (Function_156(&(vLocal_15[iVar39]), &bVar4))
+						{
+							Function_154(GRINGO_GET_REQUESTING_ACTOR(), &vLocal_15[iVar39] + 16);
+							bVar5 = true;
+						}
+						break;
+					
+					case 0x00000001:
+						if (Function_156(&(vLocal_15[iVar39]), &bVar4))
+						{
+							Function_154(GRINGO_GET_REQUESTING_ACTOR(), &vLocal_15[iVar39] + 16);
+							if (bVar4)
+							{
+								Function_150(&(vLocal_15[iVar39]));
+							}
+							bVar5 = true;
+						}
+						break;
+					
+					case 0x00000002:
+						if (&vLocal_15[iVar39] + 24 == GRINGO_GET_REQUESTING_ACTOR())
+						{
+							Function_149("eGRINGO_EndUse: Stop use by request", &vLocal_15[iVar39] + 24);
+							Function_148(&vLocal_15[iVar39] + 24, 1);
+							if (IS_ACTOR_VALID(&vLocal_15[iVar39] + 24))
+							{
+								if (IS_ACTOR_LOCAL_PLAYER(&vLocal_15[iVar39] + 24) && !GRINGO_IS_CHARACTER_BLEND_PAUSED(&vLocal_15[iVar39] + 16))
+								{
+									GRINGO_ENABLE_PLAYER_CONTROL(&vLocal_15[iVar39] + 24, 1);
+								}
+							}
+							if (GRINGO_IS_FORCE_QUITTING())
+							{
+								Function_120(&(vLocal_15[iVar39]), 0);
+							}
+							else if (vLocal_15[iVar39].f_68 < 8)
+							{
+								Function_119(&(vLocal_15[iVar39]));
+								vLocal_15[iVar39].f_68 = 8;
+							}
+							bVar5 = true;
+						}
+						else
+						{
+							Function_168("Stop use request actor mismatch!!");
+						}
+						break;
+				}
+				GRINGO_SET_MESSAGE_RETURN(bVar5);
+			}
+			else
+			{
+				GRINGO_SET_MESSAGE_RETURN(false);
+			}
+		}
+		else
+		{
+			iVar0 = 0;
+			while (iVar0 < (iLocal_125 - 1))
+			{
+				if (Function_118(vLocal_15[iVar09].f_64, 2))
+				{
+					if (!Function_16(&(vLocal_15[iVar09])))
+					{
+						Function_168("Quitting due to update end");
+						Function_120(&(vLocal_15[iVar09]), 1);
+					}
+				}
+				if (Function_15(&(vLocal_15[iVar09]), 0))
+				{
+					Function_5(&(vLocal_15[iVar09]));
+				}
+				iVar0++;
+			}
+		}
+		iVar0 = 0;
+		while (iVar0 < (iLocal_125 - 1))
+		{
+			if (Function_118(vLocal_15[iVar09].f_64, 2))
+			{
+				iVar2 = 1;
+			}
+			iVar0++;
+		}
+		if (iVar2 || Function_4(&uScriptParam_0))
+		{
+			if (bLocal_133)
+			{
+				GRINGO_WAIT(0);
+			}
+			else if (GET_DEBUG_DRAW_STATE())
+			{
+				GRINGO_WAIT(0);
+			}
+			else
+			{
+				GRINGO_WAIT(Function_3());
+			}
+		}
+		else
+		{
+			GRINGO_STOP();
+		}
+	}
+	if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+	{
+		Function_168("Removing quit context at script termination");
+		RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+	}
+	iVar0 = 0;
+	while (iVar0 < (iLocal_125 - 1))
+	{
+		if (Function_118(vLocal_15[iVar09].f_64, 2))
+		{
+			Function_2("Gringo termination calls StopUse", &vLocal_15[iVar09] + 24);
+			Function_120(&(vLocal_15[iVar09]), 0);
+		}
+		if (GRINGO_HANDLES_MOVEMENT(&vLocal_15[iVar09] + 16))
+		{
+			SET_GRINGO_BOOL_ATTR(0, "RandomPointSet", &vLocal_15[iVar09] + 16);
+		}
+		Function_15(&(vLocal_15[iVar09]), 1);
+		iVar0++;
+	}
+	Function_1(&uScriptParam_0);
+	Function_168("QUITS");
+	TERMINATE_THIS_SCRIPT();
+	return;
+}
+
+void Function_1(int iParam0) //Position: 0x442 / 1090
+{
+	iParam0 = &iParam0;
+	return;
+}
+
+void Function_2(bool bParam0, char* cParam1) //Position: 0x44E / 1102
+{
+	var uVar0;
+	
+	uVar0 = "InvalidActor";
+	if (IS_OBJECT_VALID(&cParam1))
+	{
+		uVar0 = GET_OBJECT_NAME(&cParam1);
+	}
+	LOG_OBJECT3(GRINGO_GET_MY_OBJECT_REF(), &cParam1, GET_TARGET_OBJECT(), &uVar0, ": ", &bParam0, 0);
+	return;
+}
+
+int Function_3() //Position: 0x490 / 1168
+{
+	return 0;
+}
+
+int Function_4(int iParam0) //Position: 0x497 / 1175
+{
+	struct<2> Var0;
+	
+	iParam0 = &iParam0;
+	if (!iLocal_5)
+	{
+		GET_OBJECT_POSITION(GRINGO_GET_MY_OBJECT_REF(), &Var0);
+		CLEAR_AREA_OF_GRASS(Var0, 0,25f);
+		iLocal_5 = 1;
+	}
+	return 0;
+}
+
+void Function_5(struct<69> Param0) //Position: 0x4C3 / 1219
+{
+	bool bVar0;
+	int iVar1;
+	int iVar2;
+	
+	if (!Function_118(Param0.f_64, 2))
+	{
+		Function_148(&Param0 + 24, 0);
+	}
+	else if (UNK_0x0A0E660E() || Function_14(&Param0))
+	{
+		if (Param0.f_68 == 6)
+		{
+			if (Function_12(&Param0) <= Function_10(&Param0 + 16))
+			{
+				if (IS_ACTOR_VALID(&Param0 + 24))
+				{
+					if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24))
+					{
+						if (UNK_0x0A0E660E() || !Global_6663)
+						{
+							iVar1 = Function_8(&Param0 + 16, &bVar0);
+							if (!bVar0 && UNK_0x0A0E660E())
+							{
+								iVar1 = "nDisengage";
+								bVar0 = true;
+							}
+							if (bVar0)
+							{
+								bLocal_133 = true;
+								if (!IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+								{
+									Function_168("ManagePlayerQuit: Create quit context");
+									if (Function_7(&Param0 + 16, "UseQuitBOverride", 0))
+									{
+										bLocal_134 = ADD_SCRIPT_USE_CONTEXT(&iVar1, 500, "@UI.CANCEL", false, 0, 0, 0, 4294967295, 0);
+									}
+									else
+									{
+										bLocal_134 = ADD_SCRIPT_USE_CONTEXT(&iVar1, 500, "@GENERIC.USE", false, 0, 0, 0, 4294967295, 0);
+									}
+								}
+								if (IS_SCRIPT_USE_CONTEXT_PRESSED(&bLocal_134))
+								{
+									Function_2("USE CONTEXT QUIT", &Param0 + 24);
+									Function_119(&Param0);
+									Param0.f_68 = 8;
+									if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+									{
+										Function_168("ManagePlayerQuit: Release quit context - already pressed");
+										RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+										iVar2 = 0;
+										if (GET_GRINGO_BOOL_ATTR("DeactivateChildren", &Param0 + 16, &iVar2))
+										{
+											GRINGO_SET_CHILD_USE_ACTIVATIONS(&Param0 + 16, 0);
+										}
+									}
+								}
+								if (DECOR_CHECK_EXIST(&Param0 + 24, "LobbyGringo"))
+								{
+									if (Function_6(&Param0 + 24))
+									{
+										Function_119(&Param0);
+										Function_2("STICK QUIT", &Param0 + 24);
+										Param0.f_68 = 8;
+										if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+										{
+											Function_168("ManagePlayerQuit: Release quit context - used stick");
+											RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+										}
+									}
+								}
+							}
+						}
+						else if (Global_6663)
+						{
+							if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+							{
+								Function_168("ManagePlayerQuit: Release quit context - due to wrong phase for quit");
+								RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+							}
+						}
+					}
+				}
+			}
+		}
+		else if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+		{
+			Function_168("ManagePlayerQuit: Release quit context - due to wrong phase for quit");
+			RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+		}
+	}
+	return;
+}
+
+bool Function_6(int iParam0) //Position: 0x7F7 / 2039
+{
+	bool bVar0;
+	struct<2> Var1;
+	bool bVar3;
+	float fVar4;
+	
+	bVar0 = GET_CURRENT_GAME_TIME();
+	Var1 = Vector(GET_ANALOGUE_ACTION("@GENERIC.MOVE_X", 1), GET_ANALOGUE_ACTION("@GENERIC.MOVE_Y", 1), 0.0f);
+	bVar3 = VMAG(Var1);
+	if (bVar3 >= 0,2f)
+	{
+		DECOR_SET_BOOL(&iParam0, "StickReset", true);
+	}
+	else if (bVar3 < 0,75f && DECOR_CHECK_EXIST(&iParam0, "StickReset"))
+	{
+		if (!DECOR_GET_FLOAT_VERBOSE(&iParam0, "DisconnectTime", &fVar4))
+		{
+			DECOR_SET_FLOAT(&iParam0, "DisconnectTime", bVar0);
+		}
+		else if ((bVar0 - fVar4) < 0,15f)
+		{
+			DECOR_REMOVE(&iParam0, "StickReset");
+			DECOR_REMOVE(&iParam0, "DisconnectTime");
+			return 1;
+		}
+	}
+	DECOR_REMOVE(&iParam0, "DisconnectTime");
+	return 0;
+}
+
+bool Function_7(bool bParam0, var uParam1, int iParam2) //Position: 0x910 / 2320
+{
+	int iVar0;
+	bool bVar1;
+	
+	bVar1 = GET_GRINGO_BOOL_ATTR(&uParam1, &bParam0, &iVar0);
+	if (iVar0 >= 0)
+	{
+		return bVar1;
+	}
+	return iParam2;
+}
+
+bool Function_8(char* cParam0, int iParam1) //Position: 0x92E / 2350
+{
+	return Function_9(&cParam0, "UseQuit", &iParam1);
+}
+
+bool Function_9(char* cParam0, char* cParam1, int iParam2) //Position: 0x947 / 2375
+{
+	int iVar0;
+	int iVar1;
+	
+	iVar1 = GET_GRINGO_STRING_ATTR(&cParam1, &cParam0, &iVar0);
+	iParam2 = iVar0 < 0;
+	if (iParam2)
+	{
+		if (STRING_LENGTH(&iVar1) != 0 || STRINGS_ARE_EQUAL(&iVar1, "NoString"))
+		{
+			iParam2 = 0;
+			return &iLocal_0;
+		}
+		return &iVar1;
+	}
+	return &iLocal_0;
+}
+
+float Function_10(int iParam0) //Position: 0x997 / 2455
+{
+	return Function_11(&iParam0, "MinimumUseTime", 0.0f);
+}
+
+int Function_11(float fParam0, var uParam1, int iParam2) //Position: 0x9B5 / 2485
+{
+	int iVar0;
+	
+	iVar0 = iParam2;
+	GET_GRINGO_FLOAT_ATTR(&iVar0, &uParam1, &fParam0);
+	return iVar0;
+}
+
+float Function_12(vector3 vParam0) //Position: 0x9CD / 2509
+{
+	if (Function_14(&vParam0))
+	{
+		if (Function_13(&vParam0))
+		{
+			return vParam0.z;
+		}
+		return (GET_CURRENT_GAME_TIME() - vParam0.y);
+	}
+	LOG_ERROR("ERROR: Trying to get value of TIMER that has not been started!");
+	PRINTSTRING("WARNING: Trying to get value of TIMER that has not been started! Returning 0.0 \n");
+	return vParam0.y;
+}
+
+bool Function_13(int iParam0) //Position: 0xA9A / 2714
+{
+	return Function_118(iParam0, 2);
+}
+
+bool Function_14(int iParam0) //Position: 0xAA8 / 2728
+{
+	return Function_118(iParam0, 1);
+}
+
+bool Function_15(int iParam0, int iParam1) //Position: 0xAB6 / 2742
+{
+	bool bVar0;
+	
+	bVar0 = DECOR_CHECK_EXIST(&iParam0 + 24, "GringoNoQuit");
+	if (!bVar0)
+	{
+		return 1;
+	}
+	if (iParam1 && bVar0)
+	{
+		DECOR_REMOVE(&iParam0 + 24, "GringoNoQuit");
+		return 0;
+	}
+	return 0;
+}
+
+bool Function_16(struct<69> Param0) //Position: 0xB03 / 2819
+{
+	bool bVar0;
+	bool bVar1;
+	int iVar2;
+	struct<2> Var3;
+	var uVar5;
+	var uVar6;
+	var uVar7;
+	var uVar8;
+	bool bVar9;
+	bool bVar10;
+	bool bVar11;
+	bool bVar12;
+	var uVar13;
+	float fVar14;
+	var uVar15;
+	struct<2> Var16;
+	float fVar18;
+	bool bVar19;
+	float fVar20;
+	int iVar21;
+	float fVar22;
+	struct<2> Var23;
+	bool bVar25;
+	struct<2> Var26;
+	int iVar28;
+	bool bVar29;
+	var uVar30;
+	var uVar31;
+	bool bVar32;
+	var uVar33;
+	int iVar34;
+	bool bVar35;
+	bool bVar36;
+	var uVar37;
+	float fVar38;
+	int iVar39;
+	float fVar40;
+	float fVar41;
+	int iVar42;
+	bool bVar43;
+	bool bVar44;
+	bool bVar45;
+	bool bVar46;
+	bool bVar47;
+	var uVar48;
+	var uVar49;
+	int iVar50;
+	int iVar51;
+	var uVar52;
+	struct<2> Var53;
+	bool bVar55;
+	
+	bVar11 = Function_117(&Param0 + 16);
+	if (!(IS_ACTOR_VALID(&Param0 + 24) && IS_ACTOR_ALIVE(&Param0 + 24)))
+	{
+		Function_149("UpdateUse with invalid actor", &Param0 + 24);
+		return 0;
+	}
+	if (!Function_7(&Param0 + 16, "DenyDamageTermination", 0))
+	{
+		if ((GET_CURRENT_GAME_TIME() - GET_LAST_HIT_TIME(&Param0 + 24)) >= 0,5f)
+		{
+			Function_149("Damage quit", &Param0 + 24);
+			return 0;
+		}
+	}
+	if (GET_ACTOR_INCAPACITATED(&Param0 + 24))
+	{
+		Function_149("Incapacitation quit", &Param0 + 24);
+		return 0;
+	}
+	GET_POSITION(&Param0 + 24, &Var16);
+	bVar19 = true;
+	if (Param0.f_68 < 4)
+	{
+		iVar21 = STRING_TO_HASH("SharedPropName");
+	}
+	switch (Param0.f_68)
+	{
+		case 0x00000002:
+			bLocal_133 = true;
+			if (IS_ACTOR_PLAYER(&Param0 + 24))
+			{
+				if (Function_116(&Param0 + 16, &fVar22))
+				{
+					GET_OBJECT_POSITION(GRINGO_GET_MY_OBJECT_REF(), &Var23);
+					Var23.f_4 = (StackVal + (fVar22 + 0,1f));
+					if (IS_OBJECT_VALID(GET_TARGET_OBJECT()))
+					{
+						bVar25 = IS_AREA_OBSTRUCTED2(Var23, fVar22, GET_PHYSINST_FROM_ACTOR(&Param0 + 24), GET_PHYSINST_FROM_OBJECT(GET_TARGET_OBJECT()), 0);
+					}
+					else
+					{
+						bVar25 = IS_AREA_OBSTRUCTED(Var23, fVar22, &Param0 + 24, 0);
+					}
+					if (IS_ACTOR_ON_TRAIN(&Param0 + 24, 0) || bVar25)
+					{
+						DECOR_SET_BOOL(GRINGO_GET_MY_OBJECT_REF(), "Obstructed", true);
+						Param0.f_68 = 7;
+						Function_2("Skip to eRewarding", &Param0 + 24);
+						break;
+					}
+				}
+			}
+			if (GRINGO_HANDLES_MOVEMENT(&Param0 + 16))
+			{
+				if (Function_111(&Param0 + 24, &Param0 + 16))
+				{
+					Function_2("Navigation complete (going to eStarting)", &Param0 + 24);
+					NET_ACTOR_SET_GRINGO_NAVIGATION_COMPLETE(&Param0 + 24, 1);
+					Param0.f_68 = 1;
+					Function_110(&Param0);
+				}
+			}
+			else
+			{
+				NET_ACTOR_SET_GRINGO_NAVIGATION_COMPLETE(&Param0 + 24, 1);
+				Param0.f_68 = 1;
+				Function_110(&Param0);
+			}
+			if (!Function_109(&Param0 + 16) && Param0.f_68 != 1)
+			{
+				Function_2("SET_ACTOR_POSTURE", &Param0 + 24);
+				SET_ACTOR_POSTURE(&Param0 + 24, 0);
+			}
+			break;
+		
+		case 0x00000001:
+			bLocal_133 = true;
+			Function_108(&Param0 + 16);
+			if (((!Global_99146 && IS_ACTOR_LOCAL_PLAYER(&Param0 + 24)) && !Function_118(Param0.f_64, 1)) && !DECOR_CHECK_EXIST(&Param0 + 24, "NoGringoCamera"))
+			{
+				Function_62(&Param0 + 16);
+			}
+			fVar18 = Function_61(&Param0 + 16);
+			if (Function_12(&Param0) < fVar18)
+			{
+				Function_2("INTRO TIMED OUT - ABORTING", &Param0 + 24);
+				return 0;
+			}
+			if (Function_118(Param0.f_64, 1))
+			{
+				Function_56(&Param0 + 16, &Var3, &uVar5);
+				if (!Function_118(Param0.f_64, 16))
+				{
+					if (GRINGO_SHOULD_SUSPEND_MOVER(&Param0 + 16))
+					{
+						Function_2("SUSPEND MOVER", &Param0 + 24);
+						SUSPEND_MOVER(&Param0 + 24);
+						Function_55(&Param0 + 64, 16);
+					}
+					if (GRINGO_SHOULD_FIX_MOVER(&Param0 + 16))
+					{
+						Function_2("nFIX MOVER", &Param0 + 24);
+						SET_MOVER_FROZEN(&Param0 + 24, true);
+						Function_55(&Param0 + 64, 16);
+					}
+				}
+				Function_2("MID ACTION TELEPORT", &Param0 + 24);
+				Var26.f_4 = uVar5;
+				if (DECOR_CHECK_EXIST(&Param0 + 24, "NoTeleport"))
+				{
+					SET_OBJECT_POSITION(&Param0 + 24, Var3);
+					SET_OBJECT_ORIENTATION(&Param0 + 24, Var26);
+					DECOR_REMOVE(&Param0 + 24, "NoTeleport");
+				}
+				else
+				{
+					TELEPORT_ACTOR_WITH_HEADING(&Param0 + 24, Var3, uVar5, 1, 1, Function_54());
+				}
+				if (!Function_118(Param0.f_64, 1024))
+				{
+					Function_55(&Param0 + 64, 1024);
+					SET_ACTOR_CAN_PLAY_GESTURES(&Param0 + 24, Function_7(&Param0 + 16, "AllowGestures", 1));
+				}
+				Param0.f_68 = 3;
+			}
+			else if (Function_111(&Param0 + 24, &Param0 + 16))
+			{
+				NET_ACTOR_SET_GRINGO_NAVIGATION_COMPLETE(&Param0 + 24, 1);
+				Function_2("FINISHED NAVIGATION", &Param0 + 24);
+				if (!Function_118(Param0.f_64, 1024))
+				{
+					Function_55(&Param0 + 64, 1024);
+					SET_ACTOR_CAN_PLAY_GESTURES(&Param0 + 24, Function_7(&Param0 + 16, "AllowGestures", 1));
+				}
+				Param0.f_68 = 3;
+			}
+			if (Param0.f_68 != 3 && !Function_118(Param0.f_64, 16))
+			{
+				if (GRINGO_SHOULD_SUSPEND_MOVER(&Param0 + 16))
+				{
+					Function_2("SUSPEND MOVER", &Param0 + 24);
+					SUSPEND_MOVER(&Param0 + 24);
+					Function_55(&Param0 + 64, 16);
+				}
+				if (GRINGO_SHOULD_FIX_MOVER(&Param0 + 16))
+				{
+					Function_2("nFIX MOVER", &Param0 + 24);
+					SET_MOVER_FROZEN(&Param0 + 24, true);
+					Function_55(&Param0 + 64, 16);
+				}
+			}
+			break;
+		
+		case 0x00000003:
+			if (Function_118(Param0.f_64, 32))
+			{
+				bLocal_133 = true;
+				if (!ACTOR_IS_HOLSTERED(&Param0 + 24))
+				{
+					break;
+				}
+				Function_2("FINISHED HOLSTERING", &Param0 + 24);
+			}
+			Param0.f_68 = 4;
+		
+		case 0x00000004:
+			Function_53(&Param0 + 16);
+			bLocal_133 = true;
+			Function_52(&Param0);
+			Function_49(&Param0, Function_51(&Param0 + 16));
+			if (DECOR_CHECK_EXIST(&Param0 + 24, "LobbyGringo"))
+			{
+				SET_FORCED_LOOK_ENABLE(&Param0 + 24, 0);
+			}
+			bVar29 = !GET_GRINGO_BOOL_ATTR("NoMidActionAnim", &Param0 + 16, &iVar28);
+			if (iVar28 == 0)
+			{
+				bVar29 = Function_118(Param0.f_64, 1);
+			}
+			bVar0 = Function_48(&Param0 + 24, &Param0 + 16, bVar29);
+			if (!IS_GRINGO_COMPONENT_VALID(&bVar0))
+			{
+				Param0.f_68 = 5;
+				if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24) && !GRINGO_IS_CHARACTER_BLEND_PAUSED(&Param0 + 16))
+				{
+					GRINGO_ENABLE_PLAYER_CONTROL(&Param0 + 24, 1);
+				}
+			}
+			else if (bVar11)
+			{
+				if (GRINGO_PLAY_ANIM_ON_ACTOR(&Param0 + 24, &bVar0, bVar29))
+				{
+					if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24) && !GRINGO_IS_CHARACTER_BLEND_PAUSED(&Param0 + 16))
+					{
+						GRINGO_ENABLE_PLAYER_CONTROL(&Param0 + 24, 1);
+					}
+					Param0.f_68 = 5;
+					bVar10 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD("AttachProp", 1, &Param0 + 16, 0);
+					while (bVar10 >= 4294967295)
+					{
+						bVar1 = GRINGO_GET_INDEXED_CHILD_COMPONENT(bVar10, &Param0 + 16);
+						if (GRINGO_ATTACH_PROP_TO_ANIM(&Param0 + 24, &bVar1, Function_9(&bVar1, "AttachBone", &bVar9), Function_9(&bVar1, "AttachLocator", &bVar9), 1))
+						{
+							Function_47(&bVar1, &Param0 + 24);
+							if (DECOR_CHECK_EXIST(&Param0 + 24, "LobbyGringo"))
+							{
+								uVar30 = GRINGO_GET_PROP_FROM_COMPONENT(&bVar1);
+								if (IS_PHYSINST_VALID(&uVar30))
+								{
+									ADD_CAMERA_COLLISION_EXCLUSION(GET_GAME_CAMERA(), &uVar30, 0);
+								}
+							}
+						}
+						bVar10 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD("AttachProp", 1, &Param0 + 16, bVar10 + 1);
+					}
+					bVar12 = false;
+					fVar14 = GRINGO_GET_ATTRIBUTE(&Param0 + 16, bVar12);
+					while (bVar12 <= GRINGO_GET_ATTRIBUTE_COUNT(&Param0 + 16))
+					{
+						fVar14 = GRINGO_GET_ATTRIBUTE(&Param0 + 16, bVar12);
+						if (GRINGO_IS_ATTRIBUTE_VALID(&fVar14))
+						{
+							if (GRINGO_GET_ATTR_TYPE_BY_HANDLE(&fVar14) == 2)
+							{
+								if (iVar21 == GRINGO_GET_ATTRIBUTE_HASH(&fVar14))
+								{
+									uVar15 = GRINGO_GET_STRING_ATTR_BY_HANDLE(&fVar14, &uVar13);
+									bVar10 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD(&uVar15, 1, GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 0), 0);
+									while (bVar10 >= 4294967295)
+									{
+										bVar1 = GRINGO_GET_INDEXED_CHILD_COMPONENT(bVar10, GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 0));
+										if (GRINGO_ATTACH_PROP_TO_ANIM(&Param0 + 24, &bVar1, Function_9(&bVar1, "AttachBone", &bVar9), Function_9(&bVar1, "AttachLocator", &bVar9), 1))
+										{
+											if (DECOR_CHECK_EXIST(&Param0 + 24, "LobbyGringo"))
+											{
+												uVar31 = GRINGO_GET_PROP_FROM_COMPONENT(&bVar1);
+												if (IS_PHYSINST_VALID(&uVar31))
+												{
+													ADD_CAMERA_COLLISION_EXCLUSION(GET_GAME_CAMERA(), &uVar31, 0);
+												}
+											}
+											Function_47(&bVar1, &Param0 + 24);
+										}
+										bVar10 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD(&uVar15, 1, GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 0), bVar10 + 1);
+									}
+								}
+							}
+						}
+						bVar12++;
+					}
+				}
+			}
+			if (Param0.f_68 == 5)
+			{
+				Function_2("KICKED TO DOING START", &Param0 + 24);
+				uVar7 = GET_TARGET_OBJECT();
+				if (IS_OBJECT_VALID(&uVar7))
+				{
+					Function_38(&Param0, &uVar7, &iLocal_131, &uLocal_129);
+					if (GET_OBJECT_TYPE(&uVar7) != 15)
+					{
+						fVar20 = GET_PHYSINST_FROM_OBJECT(&uVar7);
+						if (IS_PHYSINST_VALID(&fVar20))
+						{
+							if (!IS_PROP_FIXED(&fVar20))
+							{
+								Function_55(&Param0 + 64, 256);
+								SET_PROP_FIXED(&fVar20, 1);
+							}
+							else
+							{
+								Function_37(&Param0 + 64, 256);
+							}
+						}
+					}
+				}
+				GET_POSITION_OBJECT_SPACE(GRINGO_GET_MY_OBJECT_REF(), Var16, &Param0 + 32);
+				if (Function_118(Param0.f_64, 16))
+				{
+					if (GRINGO_SHOULD_SUSPEND_MOVER(&Param0 + 16))
+					{
+						Function_2("SCHEDULE STOP CUSTOM UNSUSPEND", &Param0 + 24);
+						UNK_0x4A1D2E25(&Param0 + 24);
+					}
+					if (GRINGO_SHOULD_FIX_MOVER(&Param0 + 16))
+					{
+						Function_2("SCHEDULE STOP CUSTOM UNFIX", &Param0 + 24);
+						UNK_0x817B6952(&Param0 + 24);
+					}
+				}
+				GRINGO_SET_CHILD_USE_ACTIVATIONS(&Param0 + 16, 1);
+				if (Function_36(&Param0 + 16))
+				{
+					GRINGO_SET_COMMON_LAYER_USE_ACTIVATIONS(&Param0 + 16, 0);
+				}
+				if (IS_GRINGO_COMPONENT_VALID(&bVar0))
+				{
+					if (Function_35(&Param0 + 16))
+					{
+						iVar2 = GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 3);
+						if (IS_GRINGO_COMPONENT_VALID(&iVar2))
+						{
+							uVar8 = Function_34(&iVar2);
+							if (IS_ACTOR_VALID(&uVar8))
+							{
+								SET_LINKED_ANIM_TARGET(&Param0 + 24, &uVar8);
+							}
+						}
+					}
+					else if (Function_33(&Param0 + 16))
+					{
+						iVar2 = GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 3);
+						if (IS_GRINGO_COMPONENT_VALID(&iVar2))
+						{
+							uVar8 = Function_34(&iVar2);
+							if (IS_ACTOR_VALID(&uVar8))
+							{
+								SET_LINKED_ANIM_TARGET(&uVar8, &Param0 + 24);
+							}
+						}
+					}
+					bVar9 = false;
+					uVar6 = Function_32(&Param0 + 16, &bVar9);
+					if (bVar9)
+					{
+						iVar2 = GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 3);
+						if (IS_GRINGO_COMPONENT_VALID(&iVar2))
+						{
+							uVar8 = Function_34(&iVar2);
+							if (IS_ACTOR_VALID(&uVar8))
+							{
+								SET_ACTION_NODE_FOR_ACTOR(&uVar8, &uVar6);
+							}
+						}
+					}
+				}
+				if (Function_31(&Param0 + 16))
+				{
+					if (!GET_ACTOR_ONE_SHOT_DEATH_STATUS(&Param0 + 24))
+					{
+						Function_55(&Param0 + 64, 8);
+					}
+					else
+					{
+						Function_37(&Param0 + 64, 8);
+					}
+					if (Function_118(Param0.f_64, 8))
+					{
+						SET_ACTOR_ONE_SHOT_DEATH(&Param0 + 24, true);
+					}
+				}
+				else
+				{
+					Function_37(&Param0 + 64, 8);
+				}
+				if (Function_30(&Param0 + 16))
+				{
+					NET_SET_NODE_REPLICATION(&Param0 + 24, 1, 1);
+					UNK_0xC17BAD12(&Param0 + 24);
+				}
+				uVar33 = Function_9(&Param0 + 16, "CustomReactNode", &bVar32);
+				if (bVar32)
+				{
+					SET_REACT_NODE_FOR_ACTOR(&Param0 + 24, &uVar33);
+				}
+				iVar34 = 1;
+				bVar35 = Function_7(&Param0 + 16, "CanAnimalsAttack", iVar34);
+				if (!bVar35)
+				{
+					if (IS_ACTOR_VALID(&Param0 + 24))
+					{
+						SET_ANIMAL_CAN_ATTACK(&Param0 + 24, 0);
+					}
+				}
+				Function_29(&Param0 + 24, &Param0 + 16);
+				bVar36 = Function_7(&Param0 + 16, "AllowTalking", 1);
+				if (!bVar36)
+				{
+					STOP_PED_SPEAKING(&Param0 + 24, 1);
+				}
+			}
+			break;
+		
+		case 0x00000005:
+			if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24))
+			{
+				Function_28();
+			}
+			Param0.f_68 = 6;
+			if (Function_118(Param0.f_64, 1))
+			{
+				if (Function_27(&Param0 + 16))
+				{
+					Function_2("MID ACTION NODE", &Param0 + 24);
+				}
+			}
+		
+		case 0x00000006:
+			if (!Function_26(&Param0 + 24, &Param0 + 16))
+			{
+				Function_2("CUSTOM QUIT DURING USE", &Param0 + 24);
+				Param0.f_68 = 8;
+			}
+			bVar0 = Function_48(&Param0 + 24, &Param0 + 16, Function_118(Param0.f_64, 1));
+			if (IS_GRINGO_COMPONENT_VALID(&bVar0))
+			{
+				if (!GRINGO_IS_ACTOR_PLAYING_ANIM(&Param0 + 24, &bVar0))
+				{
+					Function_2("ANIMATION QUIT DURING USE", &Param0 + 24);
+					if (GRINGO_WAS_USE_SUCCESSFUL(&Param0 + 24))
+					{
+						Param0.f_68 = 7;
+					}
+					else
+					{
+						Param0.f_68 = 8;
+					}
+				}
+			}
+			if (Function_12(&Param0) <= Function_10(&Param0 + 16))
+			{
+				GRINGO_SATISFY_MOTIVES_OF_ACTOR(&Param0 + 24, &Param0 + 16);
+			}
+			if (!IS_ACTOR_PLAYER(&Param0 + 24))
+			{
+				if (AI_SPEECH_GET_ALLOW_FOR_ACTOR(&Param0 + 24))
+				{
+					uVar37 = GRINGO_GET_FIRST_NAMED_CHILD("SpeechConts", 4, &Param0 + 16);
+					if (IS_GRINGO_COMPONENT_VALID(&uVar37))
+					{
+						if (!DECOR_GET_FLOAT_VERBOSE(GRINGO_GET_MY_OBJECT_REF(), "Gringo_SpeechTime", &fVar38))
+						{
+							DECOR_SET_FLOAT(GRINGO_GET_MY_OBJECT_REF(), "Gringo_SpeechTime", GET_CURRENT_GAME_TIME());
+						}
+						else
+						{
+							iVar39 = GRINGO_GET_ATTRIBUTE_COUNT(&uVar37);
+							if (!GET_GRINGO_FLOAT_ATTR(&fVar41, "MinDelay", &uVar37))
+							{
+								fVar41 = 10.0f;
+							}
+							else
+							{
+								iVar39 = (iVar39 - 1);
+							}
+							if (!GET_GRINGO_FLOAT_ATTR(&fVar40, "MaxDelay", &uVar37))
+							{
+								fVar40 = 30.0f;
+							}
+							else
+							{
+								iVar39 = (iVar39 - 1);
+							}
+							bVar44 = GET_GRINGO_BOOL_ATTR("nForcePlay", &uVar37, &iVar42);
+							if (iVar42 != 0)
+							{
+								iVar39 = (iVar39 - 1);
+							}
+							bVar43 = GET_GRINGO_BOOL_ATTR("AllowRepeat", &uVar37, &iVar42);
+							if (iVar42 != 0)
+							{
+								iVar39 = (iVar39 - 1);
+							}
+							bVar45 = GET_GRINGO_BOOL_ATTR("SubtitlesOn", &uVar37, &iVar42);
+							if (iVar42 != 0)
+							{
+								iVar39 = (iVar39 - 1);
+							}
+							bVar46 = GET_GRINGO_BOOL_ATTR("ForceThruSpeechBlock", &uVar37, &iVar42);
+							if (iVar42 != 0)
+							{
+								iVar39 = (iVar39 - 1);
+							}
+							if (iVar39 >= 0)
+							{
+								if (GET_CURRENT_GAME_TIME() - fVar38) <= RAND_FLOAT_RANGE(fVar41, fVar40)
+								{
+									DECOR_SET_FLOAT(GRINGO_GET_MY_OBJECT_REF(), "Gringo_SpeechTime", GET_CURRENT_GAME_TIME());
+									bVar47 = RAND_INT_RANGE(false, (iVar39 - 1));
+									uVar48 = GRINGO_GET_ATTRIBUTE(&uVar37, bVar47);
+									uVar49 = GRINGO_GET_STRING_ATTR_BY_HANDLE(&uVar48, &iVar42);
+									iVar50 = 1;
+									STRING_CLEAR_TOKENIZER();
+									iVar51 = SET_OWNERSHIP_STRAGGLER(&uVar49, ",");
+									if (iVar51 >= 1)
+									{
+										uVar52 = STRING_GET_TOKEN(1);
+										if (STRINGS_ARE_EQUAL("super", &uVar52))
+										{
+											iVar50 = 3;
+										}
+										else if (STRINGS_ARE_EQUAL("shout", &uVar52))
+										{
+											iVar50 = 2;
+										}
+										else
+										{
+											iVar50 = 1;
+										}
+										uVar49 = STRING_GET_TOKEN(0);
+									}
+									SAY_SINGLE_LINE_STRING(&Param0 + 24, &uVar49, bVar44, bVar43, iVar50, 0, bVar45, bVar46);
+								}
+							}
+						}
+					}
+				}
+			}
+			if (Param0.f_68 == 6)
+			{
+				bVar55 = Function_25(&Param0 + 16);
+				if (bVar55 <= 0.0f)
+				{
+					GET_POSITION_OBJECT_SPACE(GRINGO_GET_MY_OBJECT_REF(), Var16, &Var53);
+					if (VDIST(Var53, *(&Param0 + 32)) < bVar55)
+					{
+						Function_2("UPDATE USE TOO FAR", &Param0 + 24);
+						if (Function_24())
+						{
+							PRINTSTRING("   Distance was: ");
+							PRINTFLOAT(VDIST(Var53, *(&Param0 + 32)));
+							PRINTSTRING(" [Max allowed is: ");
+							PRINTFLOAT(bVar55);
+							PRINTSTRING(" ] ");
+							PRINTNL();
+						}
+						Param0.f_68 = 8;
+					}
+				}
+			}
+			if (Param0.f_68 == 6)
+			{
+				if (IS_TASKED_TO_USE_GRINGO_FOREVER(&Param0 + 24, GRINGO_GET_MY_GRINGO_ID()))
+				{
+					bVar19 = false;
+				}
+				if (bVar19)
+				{
+					if (Function_23(&Param0 + 16) <= 0.0f)
+					{
+						if (Function_12(&Param0) < Function_23(&Param0 + 16))
+						{
+							Function_2("UPDATE USE USETIME SATISFIED", &Param0 + 24);
+							Param0.f_68 = 7;
+						}
+					}
+				}
+			}
+			break;
+		
+		case 0x00000007:
+			Function_168("nRewarding");
+			Function_22(&Param0 + 24, &Param0 + 16);
+			Function_21(&Param0 + 24, &Param0 + 16);
+			Function_20(&Param0 + 24, &Param0 + 16);
+			SET_GRINGO_OBJECT_REF_ATTR(&Param0 + 24, "LastUserObject", &Param0 + 16);
+			Function_55(&Param0 + 64, 64);
+			Param0.f_68 = 8;
+			break;
+		
+		case 0x00000008:
+			bLocal_133 = true;
+			if (!Global_99146 && IS_ACTOR_LOCAL_PLAYER(&Param0 + 24))
+			{
+				if (!DECOR_CHECK_EXIST(&Param0 + 24, "NoGringoCamera"))
+				{
+					if (!Function_7(&Param0 + 16, "GringoCamNoEndCut", 0))
+					{
+						if (!Function_19())
+						{
+							Function_62(&Param0 + 16);
+						}
+					}
+				}
+				else
+				{
+					DECOR_REMOVE(&Param0 + 24, "NoGringoCamera");
+				}
+			}
+			if (Function_7(&Param0 + 16, "DoNotCleanUpUserSettings", 0))
+			{
+				Function_2("Use case quits - no cleapup due to DoNotCleanUpUserSettings attribute", &Param0 + 24);
+				return 0;
+			}
+			Function_2("GRINGO_RETURN_ACTOR_TO_DEFAULT_ANIMS", &Param0 + 24);
+			GRINGO_RETURN_ACTOR_TO_DEFAULT_ANIMS(&Param0 + 24);
+			Param0.f_68 = 9;
+			Function_18(&Param0 + 24, &Param0 + 16);
+			break;
+		
+		case 0x00000009:
+			if (Function_118(Param0.f_64, 1024))
+			{
+				Function_37(&Param0 + 64, 1024);
+				if (!Function_7(&Param0 + 16, "AllowGestures", 0))
+				{
+					SET_ACTOR_CAN_PLAY_GESTURES(&Param0 + 24, true);
+				}
+			}
+			if (DECOR_CHECK_EXIST(&Param0 + 24, "LobbyGringo"))
+			{
+				SET_FORCED_LOOK_ENABLE(&Param0 + 24, 1);
+			}
+			bLocal_133 = true;
+			bVar0 = Function_48(&Param0 + 24, &Param0 + 16, Function_118(Param0.f_64, 1));
+			if (IS_GRINGO_COMPONENT_VALID(&bVar0))
+			{
+				if (!GRINGO_IS_ACTOR_PLAYING_ANIM(&Param0 + 24, &bVar0))
+				{
+					Function_2("ANIMATION FINISHED", &Param0 + 24);
+					return 0;
+				}
+			}
+			return 0;
+			break;
+	}
+	Function_17(&Param0 + 24, Param0.f_68);
+	return 1;
+}
+
+void Function_17(var uParam0, int iParam1) //Position: 0x1E38 / 7736
+{
+	if (IS_ACTOR_VALID(&uParam0))
+	{
+		REPORT_GRINGO_USE_PHASE(&uParam0, iParam1);
+	}
+	return;
+}
+
+void Function_18(var uParam0, var uParam1) //Position: 0x1E4F / 7759
+{
+	uParam1 = &uParam1;
+	uParam0 = &uParam0;
+	return;
+}
+
+bool Function_19() //Position: 0x1E61 / 7777
+{
+	bool bVar0;
+	
+	if (IS_OBJECT_VALID(GRINGO_GET_MY_OBJECT_REF()))
+	{
+		bVar0 = FIND_OBJECT_IN_OBJECT(GRINGO_GET_MY_OBJECT_REF(), "GringoCamera");
+		if (IS_OBJECT_VALID(&bVar0))
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void Function_20(var uParam0, int iParam1) //Position: 0x1E94 / 7828
+{
+	int iVar0;
+	bool bVar1;
+	int iVar2;
+	var uVar3;
+	int iVar4;
+	int iVar5;
+	var uVar6;
+	
+	iVar0 = GRINGO_GET_ATTRIBUTE_COUNT(&iParam1);
+	iVar2 = STRING_TO_HASH("RemoveCapability");
+	bVar1 = false;
+	while (bVar1 < (iVar0 - 1))
+	{
+		uVar3 = GRINGO_GET_ATTRIBUTE(&iParam1, bVar1);
+		iVar4 = GRINGO_GET_ATTRIBUTE_HASH(&uVar3);
+		if (iVar4 == iVar2)
+		{
+			iVar5 = 0;
+			uVar6 = GRINGO_GET_STRING_ATTR_BY_HANDLE(&uVar3, &iVar5);
+			if (iVar5 >= 0)
+			{
+				if (HAS_CAPABILITY(&uParam0, &uVar6))
+				{
+					REMOVE_CAPABILITY(&uParam0, &uVar6);
+				}
+			}
+		}
+		bVar1++;
+	}
+	return;
+}
+
+void Function_21(var uParam0, int iParam1) //Position: 0x1F12 / 7954
+{
+	int iVar0;
+	bool bVar1;
+	int iVar2;
+	var uVar3;
+	int iVar4;
+	int iVar5;
+	var uVar6;
+	
+	iVar0 = GRINGO_GET_ATTRIBUTE_COUNT(&iParam1);
+	iVar2 = STRING_TO_HASH("AddCapability");
+	bVar1 = false;
+	while (bVar1 < (iVar0 - 1))
+	{
+		uVar3 = GRINGO_GET_ATTRIBUTE(&iParam1, bVar1);
+		iVar4 = GRINGO_GET_ATTRIBUTE_HASH(&uVar3);
+		if (iVar4 == iVar2)
+		{
+			iVar5 = 0;
+			uVar6 = GRINGO_GET_STRING_ATTR_BY_HANDLE(&uVar3, &iVar5);
+			if (iVar5 >= 0)
+			{
+				if (!HAS_CAPABILITY(&uParam0, &uVar6))
+				{
+					ADD_CAPABILITY(&uParam0, &uVar6);
+				}
+			}
+		}
+		bVar1++;
+	}
+	return;
+}
+
+void Function_22(int iParam0, int iParam1) //Position: 0x1F8E / 8078
+{
+	iParam1 = &iParam1;
+	iParam0 = &iParam0;
+	return;
+}
+
+float Function_23(int iParam0) //Position: 0x1FA0 / 8096
+{
+	return Function_11(&iParam0, "UseTime", 5.0f);
+}
+
+bool Function_24() //Position: 0x1FB7 / 8119
+{
+	return (GET_DEBUG_DRAW_STATE() && GRINGO_DEBUG_IS_SELECTED());
+}
+
+int Function_25(int iParam0) //Position: 0x1FC4 / 8132
+{
+	return Function_11(&iParam0, "MoveAllowance", 1,5f);
+}
+
+bool Function_26(var uParam0, int iParam1) //Position: 0x1FE5 / 8165
+{
+	iParam1 = &iParam1;
+	uParam0 = &uParam0;
+	if (IS_ACTOR_LOCAL_PLAYER(&uParam0) && !iLocal_7)
+	{
+		if (IS_ACTION_NODE_PLAYING_PARTIAL(&uParam0, "find_a"))
+		{
+			iLocal_7 = 1;
+			SAY_SINGLE_LINE_CONTEXT(&uParam0, 362, 0, 1, 1, 0, 4294967295, 4294967295, 0, 1);
+		}
+	}
+	DECOR_SET_INT(&uParam0, "iLockerOpen", true);
+	return 1;
+}
+
+bool Function_27(bool bParam0) //Position: 0x2041 / 8257
+{
+	return IS_GRINGO_COMPONENT_VALID(GRINGO_GET_FIRST_NAMED_CHILD("PlayerUseAnim", 2, &bParam0));
+}
+
+void Function_28() //Position: 0x2061 / 8289
+{
+	return;
+}
+
+void Function_29(int iParam0, bool bParam1) //Position: 0x2067 / 8295
+{
+	bParam1 = &bParam1;
+	iParam0 = &iParam0;
+	return;
+}
+
+bool Function_30(char* cParam0) //Position: 0x2079 / 8313
+{
+	cParam0 = &cParam0;
+	return 1;
+}
+
+bool Function_31(int iParam0) //Position: 0x2086 / 8326
+{
+	return Function_7(&iParam0, "OneShotKill", 0);
+}
+
+bool Function_32(char* cParam0, int iParam1) //Position: 0x20A1 / 8353
+{
+	return Function_9(&cParam0, "ParentAnimNode", &iParam1);
+}
+
+bool Function_33(int iParam0) //Position: 0x20C1 / 8385
+{
+	return Function_7(&iParam0, "LinkToParentAnim", 0);
+}
+
+var Function_34(int iParam0) //Position: 0x20E1 / 8417
+{
+	int iVar0;
+	int iVar1;
+	
+	iVar0 = 0;
+	while (iVar0 < (vLocal_15 - 1))
+	{
+		if (&vLocal_15[iVar09] + 16 == &iParam0)
+		{
+			return &vLocal_15[iVar09] + 24;
+		}
+		iVar0++;
+	}
+	return &iVar1;
+}
+
+bool Function_35(int iParam0) //Position: 0x2118 / 8472
+{
+	return Function_7(&iParam0, "LinkParentToAnim", 0);
+}
+
+bool Function_36(int iParam0) //Position: 0x2138 / 8504
+{
+	return Function_7(&iParam0, "SingularUse", 0);
+}
+
+void Function_37(var uParam0, int iParam1) //Position: 0x2153 / 8531
+{
+	uParam0 = (uParam0 - (uParam0 && iParam1));
+	return;
+}
+
+void Function_38(int iParam0, int iParam1, bool bParam2, bool bParam3) //Position: 0x2169 / 8553
+{
+	bool bVar0;
+	bool bVar1;
+	var uVar2;
+	var uVar3;
+	var uVar4;
+	bool bVar5;
+	var uVar6;
+	bool bVar7;
+	var uVar8;
+	bool bVar9;
+	int iVar10;
+	var uVar11;
+	int iVar12;
+	var uVar13;
+	
+	PRINTSTRING("CALLED ManageTargetRelation");
+	PRINTNL();
+	uVar2 = Function_46(&iParam0 + 16, &bVar0);
+	uVar3 = Function_45(&iParam0 + 16, &bVar1);
+	uVar4 = Function_44(&iParam0 + 16);
+	if (!((bVar0 || bVar1) || IS_GRINGO_COMPONENT_VALID(&uVar4)))
+	{
+		uVar6 = Function_43(&iParam0 + 16, &bVar5);
+		if (bVar5)
+		{
+			uVar8 = Function_42(&iParam0 + 16, &bVar7);
+			if (!bVar7)
+			{
+				LOG_ERROR("Provided target physical attachment bone with no corresponding user attachment");
+				return;
+			}
+			*(&iParam0 + 48) = ATTACH_OBJECTS_PHYSICAL(&iParam1, &iParam0 + 24, &uVar6, &uVar8, 0,02f);
+		}
+		return;
+	}
+	bVar9 = true;
+	if (bVar0)
+	{
+		bVar9 = ATTACH_SLOT_FROM_STRING(&uVar2);
+		if (Function_24())
+		{
+			Function_41();
+			PRINTSTRING(" - got attach slot for target: ");
+			PRINTINT(bVar9);
+			PRINTNL();
+		}
+	}
+	if (bVar1)
+	{
+		ATTACH_PROP_TO_ANIM(&iParam0 + 24, &iParam1, &uVar3, Function_40(&iParam0 + 16, &iVar10), 0, bVar9);
+	}
+	else
+	{
+		ATTACH_PROP_TO_ANIM(&iParam0 + 24, &iParam1, Function_39(), Function_40(&iParam0 + 16, &iVar10), 0, bVar9);
+	}
+	if (IS_GRINGO_COMPONENT_VALID(&uVar4))
+	{
+		PRINTSTRING("HAVE TARGET ANIM");
+		PRINTNL();
+		if (IS_GRINGO_COMPONENT_VALID(&bParam2))
+		{
+			LOG_ERROR("Cannot set a target skeleton anim while one is already playing");
+			return;
+		}
+		if (IS_OBJECT_ANIMATOR_VALID(&bParam3))
+		{
+			LOG_ERROR("sTargetSkelAnimator not cleared correctly on previous anim");
+			DESTROY_OBJECT_ANIMATOR(&bParam3);
+		}
+		uVar11 = GRINGO_GET_ACTOR_SPECIFIC_AST_FILENAME(&uVar4, &iParam0 + 24);
+		iVar12 = GRINGO_ANIM_GET_ACT_FILENAME(&uVar4);
+		uVar13 = GRINGO_ANIM_GET_ACT_ROOTNODE(&uVar4);
+		bParam3 = CREATE_OBJECT_ANIMATOR_ON_OBJECT(&iParam1, &uVar11, &iVar12, &uVar13);
+		if (IS_OBJECT_ANIMATOR_VALID(&bParam3))
+		{
+			if (Function_7(&uVar4, "LinkToUser", 0))
+			{
+				if (Function_24())
+				{
+					Function_41();
+					PRINTSTRING(" - linking target at slot: ");
+					PRINTINT(bVar9);
+					PRINTNL();
+				}
+				LINK_OBJECT_ANIMATOR_TO_ACTOR(&bParam3, &iParam0 + 24, bVar9);
+			}
+		}
+		else
+		{
+			LOG_ERROR("sTargetSkelAnimator not cleared correctly!");
+		}
+		bParam2 = &iParam0 + 16;
+	}
+}
+
+var Function_39() //Position: 0x248D / 9357
+{
+	int iVar0;
+	
+	return &iVar0;
+}
+
+bool Function_40(char* cParam0, int iParam1) //Position: 0x2496 / 9366
+{
+	return Function_9(&cParam0, "TargetLocator", &iParam1);
+}
+
+void Function_41() //Position: 0x24B5 / 9397
+{
+	PRINTSTRING(GET_OBJECT_MODEL_NAME(GRINGO_GET_MY_OBJECT_REF()));
+	return;
+}
+
+bool Function_42(char* cParam0, int iParam1) //Position: 0x24C4 / 9412
+{
+	return Function_9(&cParam0, "UserPhysAttachBone", &iParam1);
+}
+
+bool Function_43(char* cParam0, int iParam1) //Position: 0x24E8 / 9448
+{
+	return Function_9(&cParam0, "TargetPhysAttachBone", &iParam1);
+}
+
+int Function_44(int iParam0) //Position: 0x250E / 9486
+{
+	return GRINGO_GET_FIRST_NAMED_CHILD("TargetSkelAnim", 2, &iParam0);
+}
+
+bool Function_45(var uParam0, int iParam1) //Position: 0x252C / 9516
+{
+	return Function_9(&uParam0, "TargetAttachBone", &iParam1);
+}
+
+bool Function_46(var uParam0, int iParam1) //Position: 0x254E / 9550
+{
+	return Function_9(&uParam0, "TargetAttachSlot", &iParam1);
+}
+
+void Function_47(bool bParam0, int iParam1) //Position: 0x2570 / 9584
+{
+	var uVar0;
+	var uVar1;
+	var uVar2;
+	var uVar3;
+	var uVar4;
+	var uVar5;
+	int iVar6;
+	
+	uVar0 = GRINGO_GET_FIRST_CHILD(2, &bParam0);
+	if (IS_GRINGO_COMPONENT_VALID(&uVar0))
+	{
+		uVar2 = GRINGO_GET_ACTOR_SPECIFIC_AST_FILENAME(&uVar0, &iParam1);
+		uVar3 = GRINGO_ANIM_GET_ACT_FILENAME(&uVar0);
+		uVar4 = GRINGO_ANIM_GET_ACT_ROOTNODE(&uVar0);
+		uVar1 = GRINGO_GET_PHYSINST(&bParam0);
+		if (IS_PHYSINST_VALID(&uVar1))
+		{
+			uVar5 = GET_OBJECT_ANIMATOR_ON_OBJECT(&uVar1);
+			if (IS_OBJECT_ANIMATOR_VALID(&uVar5))
+			{
+				LOG_ERROR("Previous object animator not cleared - destroying now!");
+				DESTROY_OBJECT_ANIMATOR(&uVar5);
+			}
+			iVar6 = CREATE_OBJECT_ANIMATOR_ON_OBJECT(&uVar1, &uVar2, &uVar3, &uVar4);
+			if (IS_OBJECT_ANIMATOR_VALID(&iVar6))
+			{
+				LINK_OBJECT_ANIMATOR_TO_ACTOR(&iVar6, &iParam1, GRINGO_GET_PROP_ATTACH_SLOT(&bParam0));
+			}
+		}
+	}
+	return;
+}
+
+var Function_48(var uParam0, int iParam1, bool bParam2) //Position: 0x2638 / 9784
+{
+	int iVar0;
+	
+	if (bParam2)
+	{
+		iVar0 = GRINGO_GET_FIRST_NAMED_CHILD("UseAnimMidAction", 2, &iParam1);
+		if (IS_GRINGO_COMPONENT_VALID(&iVar0))
+		{
+			return &iVar0;
+		}
+	}
+	if (IS_ACTOR_PLAYER(&uParam0))
+	{
+		iVar0 = GRINGO_GET_FIRST_NAMED_CHILD("PlayerUseAnim", 2, &iParam1);
+		if (IS_GRINGO_COMPONENT_VALID(&iVar0))
+		{
+			return &iVar0;
+		}
+	}
+	iVar0 = GRINGO_GET_FIRST_NAMED_CHILD("UseAnim", 2, &iParam1);
+	return &iVar0;
+}
+
+void Function_49(int iParam0, float fParam1) //Position: 0x26B4 / 9908
+{
+	if (!Function_14(&iParam0))
+	{
+		Function_50(&iParam0, fParam1);
+	}
+	return;
+}
+
+void Function_50(vector3 vParam0) //Position: 0x26CC / 9932
+{
+	vParam0.f_4 = (GET_CURRENT_GAME_TIME() - fParam1);
+	Function_55(&vParam0, 1);
+	Function_37(&vParam0, 2);
+	vParam0.f_8 = 0.0f;
+	return;
+}
+
+var Function_51(int iParam0) //Position: 0x26F1 / 9969
+{
+	return (RAND_FLOAT_RANGE(0.0f, 1.0f) * Function_11(&iParam0, "RandUseTime", 0.0f));
+}
+
+void Function_52(vector3 vParam0) //Position: 0x2712 / 10002
+{
+	vParam0.f_4 = 0.0f;
+	vParam0.f_8 = 0.0f;
+	vParam0 = 0;
+	return;
+}
+
+void Function_53(var uParam0) //Position: 0x2729 / 10025
+{
+	uParam0 = &uParam0;
+	return;
+}
+
+int Function_54() //Position: 0x2735 / 10037
+{
+	return 1;
+}
+
+void Function_55(var uParam0, int iParam1) //Position: 0x273C / 10044
+{
+	uParam0 = (uParam0 || iParam1);
+	return;
+}
+
+void Function_56(int iParam0, var uParam1, int iParam2) //Position: 0x274D / 10061
+{
+	float fVar0;
+	
+	Function_59(&iParam0);
+	uParam1 = Function_59(&iParam0);
+	iParam2 = Function_58(&iParam0);
+	fVar0 = Function_57(&iParam0);
+	if (fVar0 < 180.0f)
+	{
+		fVar0 = 180.0f;
+	}
+	iParam2 = (iParam2 + RAND_FLOAT_RANGE(-fVar0, fVar0));
+	return;
+}
+
+int Function_57(int iParam0) //Position: 0x2792 / 10130
+{
+	return Function_11(&iParam0, "UseDirectionToleranceDegrees", 0.0f);
+}
+
+float Function_58(int iParam0) //Position: 0x27BE / 10174
+{
+	return GRINGO_GET_USE_COMPONENT_HEADING(&iParam0);
+}
+
+struct<8> Function_59(int iParam0) //Position: 0x27CA / 10186
+{
+	struct<2> Var0;
+	var uVar2;
+	var uVar3;
+	
+	if (Function_60(&iParam0))
+	{
+		uVar2 = GRINGO_GET_PARENT_COMPONENT(&iParam0, 3);
+		if (IS_GRINGO_COMPONENT_VALID(&uVar2))
+		{
+			uVar3 = GET_ACTOR_FROM_OBJECT(GRINGO_GET_COMPONENT_USER(&uVar2));
+			if (IS_ACTOR_VALID(&uVar3))
+			{
+				GRINGO_GET_USE_COMPONENT_POSITION_LOCAL(&Var0, &iParam0);
+				GET_OBJECT_RELATIVE_POSITION(GET_OBJECT_FROM_ACTOR(&uVar3), Var0, &Var0);
+			}
+		}
+		else
+		{
+			LOG_ERROR("Can only use 'UsePosActorRelative' attribute on child use cases");
+		}
+	}
+	else if (!GET_GRINGO_RELATIVE_POSITION_ATTR(&Var0, "CentreLocator", &iParam0))
+	{
+		if (!GET_GRINGO_RELATIVE_POSITION_ATTR(&Var0, "UseLocator", &iParam0))
+		{
+			if (!GRINGO_GET_USE_COMPONENT_POSITION(&Var0, &iParam0))
+			{
+				LOG_ERROR("Failed to find use location!");
+			}
+		}
+	}
+	return StackVal, Var0;
+}
+
+bool Function_60(int iParam0) //Position: 0x28CC / 10444
+{
+	return Function_7(&iParam0, "UsePosActorRelative", 0);
+}
+
+int Function_61(int iParam0) //Position: 0x28EF / 10479
+{
+	return Function_11(&iParam0, "StartingPhaseTimeout", 10.0f);
+}
+
+void Function_62(int iParam0) //Position: 0x2917 / 10519
+{
+	var uVar0;
+	
+	iParam0 = &iParam0;
+	if (!iLocal_6)
+	{
+		iLocal_6 = 1;
+		HUD_ENABLE(0);
+		uVar0 = GET_OBJECT_MODEL_NAME(GRINGO_GET_MY_OBJECT_REF());
+		if (STRING_CONTAINS_STRING(&uVar0, "1"))
+		{
+			uLocal_8 = Function_103(&Global_46715, 0, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "2"))
+		{
+			uLocal_8 = Function_98(&Global_46715, 0, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "3"))
+		{
+			uLocal_8 = Function_93(&Global_46715, 0, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "4"))
+		{
+			uLocal_8 = Function_88(&Global_46715, 0, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "5"))
+		{
+			uLocal_8 = Function_83(&Global_46715, 0, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "6"))
+		{
+			uLocal_8 = Function_79(&Global_46715, 0, &Global_54076, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "7"))
+		{
+			uLocal_8 = Function_74(&Global_46715, 0, &Global_54076, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "8"))
+		{
+			uLocal_8 = Function_69(&Global_46715, 0, 1, 0, 0);
+		}
+		else if (STRING_CONTAINS_STRING(&uVar0, "9") || STRING_CONTAINS_STRING(&uVar0, "final"))
+		{
+			uLocal_8 = Function_64(&Global_46715, 0, 1, 0, 0);
+		}
+		if (!Function_63(StackVal, Local_10))
+		{
+			TELEPORT_ACTOR(&Global_21369 + 72, &Local_10, 0, 1, 1);
+			TASK_STAND_STILL(&Global_21369 + 72, -1.0f, 1, 0);
+		}
+	}
+	return;
+}
+
+bool Function_63(vector3 vParam0) //Position: 0x2A80 / 10880
+{
+	return ((vParam0.x != 0.0f && vParam0.y != 0.0f) && vParam0.z != 0.0f);
+}
+
+var Function_64(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x2A98 / 10904
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure9", 3, 1);
+	}
+	Function_65(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_65(var uParam0) //Position: 0x2B22 / 11042
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_68(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_67(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_66(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,5f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 13.0f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0);
+	return;
+}
+
+void Function_66(int iParam0) //Position: 0x2B9C / 11164
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,13694f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-729,7554f, 228,3827f, 1106,957f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,256301f, 0,645528f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_67(int iParam0) //Position: 0x2C11 / 11281
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,13694f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-729,5964f, 227,6443f, 1104,041f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,111271f, 2,57844f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_68(int iParam0) //Position: 0x2C86 / 11398
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,13694f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-732,0171f, 228,4102f, 1103,902f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,273105f, -2,208663f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+var Function_69(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x2CFB / 11515
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure8", 3, 1);
+	}
+	Function_70(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_70(var uParam0) //Position: 0x2D85 / 11653
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_73(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_72(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_71(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,5f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 15.0f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0);
+	return;
+}
+
+void Function_71(int iParam0) //Position: 0x2DFF / 11775
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,39744f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(148,3418f, 129,7081f, 1386,483f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,019448f, 2,110423f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_72(int iParam0) //Position: 0x2E74 / 11892
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,39744f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(145,8083f, 129,1071f, 1386,071f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(0,051116f, -2,242977f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_73(bool bParam0) //Position: 0x2EE9 / 12009
+{
+	SET_CAMERASHOT_PERSPECTIVE(&bParam0, 1);
+	SET_CAMERASHOT_FOV(&bParam0, 43,39744f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&bParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&bParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&bParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &bParam0, Vector(145,015f, 129,1525f, 1384,344f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &bParam0, Vector(0,1462f, -2,67566f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&bParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&bParam0);
+	return;
+}
+
+var Function_74(var uParam0, bool bParam1, var uParam2, bool bParam3, bool bParam4, var uParam5) //Position: 0x2F5E / 12126
+{
+	var uVar0;
+	
+	if (&bParam3)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure7", 3, 1);
+	}
+	Function_75(&uVar0, &uParam2);
+	if (uParam5 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam4)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam4);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_75(var uParam0, int iParam1) //Position: 0x2FEB / 12267
+{
+	var uVar0;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_78(&uVar0, &iParam1);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_77(&uVar0, &iParam1);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_76(&uVar0, &iParam1);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,5f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 15,1f, 1);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	return;
+}
+
+void Function_76(int iParam0, int iParam1) //Position: 0x305F / 12383
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 55,51708f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	ATTACH_CAMERASHOT(StackVal, StackVal, StackVal, &iParam0, &iParam1, Vector(-0,627228f, 1,744904f, 0,343633f), Vector(-15,41549f, -30,20318f, 0.0f), Vector(0.0f, 0.0f, 0.0f), 0);
+	RESET_CAMERASHOT_TARGET(&iParam0, 0);
+	SET_CAMERASHOT_TARGET_OBJECT(&iParam0, &iParam1, 1);
+	SET_CAMERASHOT_TARGET_OBJECT_OFFSETS(StackVal, StackVal, &iParam0, Vector(-0,115882f, 1,464634f, -0,534769f), Vector(0.0f, 0.0f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_77(int iParam0, var uParam1) //Position: 0x30FC / 12540
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 55,51708f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	ATTACH_CAMERASHOT(StackVal, StackVal, StackVal, &iParam0, &uParam1, Vector(-0,97427f, 0,803337f, -0,290319f), Vector(-7,555651f, -54,71271f, 0.0f), Vector(0.0f, 0.0f, 0.0f), 0);
+	RESET_CAMERASHOT_TARGET(&iParam0, 0);
+	SET_CAMERASHOT_TARGET_OBJECT(&iParam0, &uParam1, 1);
+	SET_CAMERASHOT_TARGET_OBJECT_OFFSETS(StackVal, StackVal, &iParam0, Vector(-0,385619f, 0,707687f, -0,706823f), Vector(0.0f, 0.0f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_78(var uParam0, bool bParam1) //Position: 0x3199 / 12697
+{
+	SET_CAMERASHOT_PERSPECTIVE(&uParam0, 1);
+	SET_CAMERASHOT_FOV(&uParam0, 55,51708f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&uParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&uParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&uParam0, 0);
+	ATTACH_CAMERASHOT(StackVal, StackVal, StackVal, &uParam0, &bParam1, Vector(-0,697796f, 1,441544f, -0,969471f), Vector(-3,739409f, -118,576f, 0.0f), Vector(0.0f, 0.0f, 0.0f), 0);
+	RESET_CAMERASHOT_TARGET(&uParam0, 0);
+	SET_CAMERASHOT_TARGET_OBJECT(&uParam0, &bParam1, 1);
+	SET_CAMERASHOT_TARGET_OBJECT_OFFSETS(StackVal, StackVal, &uParam0, Vector(0,32587f, 1,365368f, -0,412007f), Vector(0.0f, 0.0f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGETDOF(&uParam0);
+	return;
+}
+
+var Function_79(var uParam0, bool bParam1, var uParam2, bool bParam3, bool bParam4, var uParam5) //Position: 0x3236 / 12854
+{
+	var uVar0;
+	
+	if (&bParam3)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 2, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure6", 2, 1);
+	}
+	Function_80(&uVar0, &uParam2);
+	if (uParam5 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam4)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam4);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_80(var uParam0, var uParam1) //Position: 0x32C3 / 12995
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_82(&uVar0, &uParam1);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_81(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 16,5f, 0);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 30.0f, 1);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 30.0f, 1, 0);
+	return;
+}
+
+void Function_81(int iParam0) //Position: 0x3321 / 13089
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 20,00001f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,15f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-2745,12f, 56,24567f, 4655,606f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,12123f, 1,216153f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_82(int iParam0, int iParam1) //Position: 0x3396 / 13206
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 20,00001f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,15f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	ATTACH_CAMERASHOT(StackVal, StackVal, StackVal, &iParam0, &iParam1, Vector(4,777088f, 0,886692f, -3,096477f), Vector(-3,263281f, 113,0842f, 0.0f), Vector(0.0f, 0.0f, 0.0f), 0);
+	SET_CAMERASHOT_TARGET_OBJECT(&iParam0, &iParam1, 0);
+	SET_CAMERASHOT_TARGET_OBJECT_OFFSETS(StackVal, StackVal, &iParam0, Vector(-0,412431f, 0,565052f, -0,885274f), Vector(0.0f, 0.0f, 0.0f), 0);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+var Function_83(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x342B / 13355
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure5", 3, 1);
+	}
+	Function_84(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_84(var uParam0) //Position: 0x34B5 / 13493
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_87(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_86(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_85(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,5f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 15.0f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0);
+	return;
+}
+
+void Function_85(int iParam0) //Position: 0x352F / 13615
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,15521f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-3861,104f, 16,49298f, 4317,42f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(0,011631f, -0,887312f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_86(int iParam0) //Position: 0x35A4 / 13732
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,15521f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-3858,692f, 15,78359f, 4318,053f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,024083f, 1,08069f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_87(int iParam0) //Position: 0x3619 / 13849
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,15521f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-3861,173f, 16,42888f, 4320,16f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,085023f, -0,637618f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+var Function_88(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x368E / 13966
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure4", 3, 1);
+	}
+	Function_89(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_89(var uParam0) //Position: 0x3718 / 14104
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_92(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_91(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_90(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,6f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 15.0f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0);
+	return;
+}
+
+void Function_90(int iParam0) //Position: 0x3792 / 14226
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,06049f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-2813,56f, 14,75953f, 3973,934f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,152252f, 1,272557f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_91(int iParam0) //Position: 0x3807 / 14343
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,06049f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-2814,256f, 13,77526f, 3971,298f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,002291f, 3,039589f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_92(int iParam0) //Position: 0x387C / 14460
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,06049f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-2814,903f, 14,19791f, 3971,825f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(0,228709f, -2,955492f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+var Function_93(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x38F1 / 14577
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure3", 3, 1);
+	}
+	Function_94(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_94(var uParam0) //Position: 0x397B / 14715
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_97(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_96(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_95(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,6f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 15.0f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0);
+	return;
+}
+
+void Function_95(int iParam0) //Position: 0x39F5 / 14837
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 54,53894f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-4089,414f, 35,43062f, 2932,434f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(0,031501f, 1,224209f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_96(int iParam0) //Position: 0x3A6A / 14954
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 54,53894f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-4091,456f, 34,53726f, 2930,675f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,046482f, -2,352416f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_97(int iParam0) //Position: 0x3ADF / 15071
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 54,53894f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-4092,104f, 36,74055f, 2931,914f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,737038f, -1,229879f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+var Function_98(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x3B54 / 15188
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure2", 3, 1);
+	}
+	Function_99(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_99(var uParam0) //Position: 0x3BDE / 15326
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_102(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_101(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_100(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,6f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 14,97f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0);
+	return;
+}
+
+void Function_100(int iParam0) //Position: 0x3C58 / 15448
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,06838f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-1990,93f, 33,72362f, 3616,541f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,06504f, -2,277584f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_101(int iParam0) //Position: 0x3CCD / 15565
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,06838f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-1991,633f, 32,97052f, 3616,964f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,011604f, -2,146168f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_102(int iParam0) //Position: 0x3D42 / 15682
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,06838f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-1992,837f, 34,112f, 3616,104f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,244737f, -2,124207f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+var Function_103(var uParam0, bool bParam1, bool bParam2, bool bParam3, var uParam4) //Position: 0x3DB7 / 15799
+{
+	var uVar0;
+	
+	if (&bParam2)
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, Function_39(), 3, 1);
+	}
+	else
+	{
+		uVar0 = CREATE_CUTSCENEOBJECT_IN_LAYOUT(&uParam0, "Player_Treasure1", 3, 1);
+	}
+	Function_104(&uVar0);
+	if (uParam4 && CHECK_CUTSCENE_COLLISIONS(&uVar0))
+	{
+		DESTROY_OBJECT(&uVar0);
+	}
+	else
+	{
+		SET_CAMERA_LIGHTING_SCHEME(GET_CAMERA_FROM_CUTSCENEOBJECT(&uVar0), "");
+		if (&bParam3)
+		{
+			SET_CUTSCENEOBJECT_PAUSED(&uVar0, &bParam3);
+		}
+		else
+		{
+			PLAY_CUTSCENEOBJECT(&uVar0, bParam1, 0.0f, 0.0f, 4294967295, 4294967295, 0, 0, 0, 0);
+		}
+	}
+	return &uVar0;
+}
+
+void Function_104(var uParam0) //Position: 0x3E41 / 15937
+{
+	var uVar0;
+	int iVar1;
+	
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 0);
+	Function_107(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 1);
+	Function_106(&uVar0);
+	uVar0 = GET_CAMERASHOT_FROM_CUTSCENEOBJECT(&uParam0, 2);
+	Function_105(&uVar0);
+	CUTSCENEOBJECT_SET_RECENTER_GAMECAM(&uParam0, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 0, 1,6f, 0);
+	CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 1, 15.0f, 1);
+	iVar1 = CUTSCENEOBJECT_ADD_TRANSITION_HOLD(&uParam0, 2, 100.0f, 2);
+	ADD_CAMERATRANSITION_EVENT_GAMECAMERARESET(&iVar1, 100.0f, 1, 0.0f);
+	return;
+}
+
+void Function_105(int iParam0) //Position: 0x3EBB / 16059
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,03442f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-1901,215f, 28,9122f, 2250,947f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,064542f, -2,140382f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_106(int iParam0) //Position: 0x3F30 / 16176
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,03442f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-1901,427f, 28,27365f, 2250,028f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(-0,124078f, -2,801709f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_107(int iParam0) //Position: 0x3FA5 / 16293
+{
+	SET_CAMERASHOT_PERSPECTIVE(&iParam0, 1);
+	SET_CAMERASHOT_FOV(&iParam0, 43,03442f);
+	SET_CAMERASHOT_NEAR_CLIP_PLANE(&iParam0, 0,1f);
+	SET_CAMERASHOT_COLLISION_PARAMETERS(&iParam0, 0,3f, 1);
+	SET_CAMERASHOT_COLLISION_ENABLED(&iParam0, 0);
+	SET_CAMERASHOT_POSITION(StackVal, &iParam0, Vector(-1901,144f, 28,83703f, 2250,507f));
+	SET_CAMERASHOT_ORIENTATION(StackVal, &iParam0, Vector(0,072262f, -2,533389f, 0.0f), 1);
+	RESET_CAMERASHOT_TARGET(&iParam0, 1);
+	RESET_CAMERASHOT_TARGETDOF(&iParam0);
+	return;
+}
+
+void Function_108(int iParam0) //Position: 0x401B / 16411
+{
+	iParam0 = &iParam0;
+	return;
+}
+
+bool Function_109(int iParam0) //Position: 0x4027 / 16423
+{
+	return Function_7(&iParam0, "MaintainPosture", 0);
+}
+
+void Function_110(int iParam0) //Position: 0x4046 / 16454
+{
+	if (!Function_14(&iParam0))
+	{
+		Function_50(&iParam0, 0.0f);
+	}
+	return;
+}
+
+bool Function_111(var uParam0, int iParam1) //Position: 0x405D / 16477
+{
+	struct<2> Var0;
+	bool bVar2;
+	var uVar3;
+	var uVar4;
+	int iVar5;
+	
+	Function_59(&iParam1);
+	Var0 = Function_59(&iParam1);
+	bVar2 = Function_58(&iParam1);
+	if (!IS_ACTOR_VALID(&uParam0))
+	{
+		return 0;
+	}
+	if (IS_ACTOR_PLAYER(&uParam0))
+	{
+		TELEPORT_ACTOR_WITH_HEADING(&uParam0, Var0, bVar2, 0, 1, 1);
+		return 1;
+	}
+	if (GRINGO_HANDLES_MOVEMENT(&iParam1) && DECOR_CHECK_EXIST(GRINGO_GET_MY_OBJECT_REF(), "Volume"))
+	{
+		return Function_115(&uParam0, &iParam1);
+	}
+	uVar3 = Function_114(&iParam1);
+	uVar4 = Function_57(&iParam1);
+	Function_112(&iParam1);
+	iVar5 = Function_112(&iParam1);
+	return GRINGO_ACTOR_MOVE_TO_AND_FACE_WITH_USER_OFFSET(&uParam0, &Var0, &iVar5, uVar3, 0,2f, 1, bVar2, uVar4, 0, 0);
+}
+
+struct<8> Function_112(int iParam0) //Position: 0x40EE / 16622
+{
+	struct<2> Var0;
+	
+	Var0 = Vector(0.0f, 0.0f, 0.0f);
+	Function_113(StackVal, &iParam0, "UserOffset", Var0);
+	return StackVal, Function_113(StackVal, &iParam0, "UserOffset", Var0);
+}
+
+struct<8> Function_113(var uParam0, var uParam1, struct<2> Param2) //Position: 0x4112 / 16658
+{
+	struct<2> Var0;
+	
+	Var0 = Param2;
+	GET_GRINGO_VECTOR_ATTR(&Var0, &uParam1, &uParam0);
+	return StackVal, Var0;
+}
+
+int Function_114(int iParam0) //Position: 0x4131 / 16689
+{
+	return Function_11(&iParam0, "UseLocationTolerance", 0.0f);
+}
+
+int Function_115(var uParam0, int iParam1) //Position: 0x4155 / 16725
+{
+	bool bVar0;
+	float fVar1;
+	var uVar2;
+	bool bVar4;
+	var uVar5;
+	var uVar6;
+	var uVar8;
+	var uVar10;
+	var uVar12;
+	struct<2> Var13;
+	var uVar15;
+	bool bVar17;
+	
+	bVar0 = Function_114(&iParam1);
+	fVar1 = Function_57(&iParam1);
+	if (!GET_GRINGO_BOOL_ATTR("RandomPointSet", &iParam1, &uVar5))
+	{
+		bVar4 = RAND_FLOAT_RANGE(0.0f, 360.0f);
+		uVar12 = GET_VOLUME_FROM_OBJECT(DECOR_GET_OBJECT(GRINGO_GET_MY_OBJECT_REF(), "Volume"));
+		if (IS_ACTOR_IN_VOLUME(&uParam0, &uVar12) && DECOR_CHECK_EXIST(&uParam0, "VolOnly"))
+		{
+			return 1;
+		}
+		GENERATE_RANDOM_POINT_IN_VOLUME(&uVar12, &uVar6);
+		FIND_VOL_SURFACE_POINTS_FOR_POINT(&uVar12, &uVar6, &uVar8, &uVar10);
+		bVar17 = false;
+		bVar17 = FIND_INTERSECTION(&uVar8, &uVar10, &Var13, &uVar15, 1, 4294967295, 4194304);
+		if (bVar17)
+		{
+			uVar2 = Var13;
+			SET_GRINGO_VECTOR_ATTR(&Var13, "RandomPoint", &iParam1);
+			SET_GRINGO_FLOAT_ATTR(bVar4, "RandomDirection", &iParam1);
+			SET_GRINGO_BOOL_ATTR(1, "RandomPointSet", &iParam1);
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	GET_GRINGO_VECTOR_ATTR(&uVar2, "RandomPoint", &iParam1);
+	return GRINGO_ACTOR_MOVE_TO_AND_FACE(&uParam0, &uVar2, bVar0, 0,2f, 1, bVar4, fVar1, 1, 0);
+}
+
+bool Function_116(var uParam0, int iParam1) //Position: 0x427D / 17021
+{
+	iParam1 = Function_11(&uParam0, "AreaClearCheck", -1.0f);
+	if (iParam1 < 0.0f)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+int Function_117(var uParam0) //Position: 0x42AB / 17067
+{
+	var uVar0;
+	bool bVar1;
+	bool bVar2;
+	var uVar3;
+	int iVar4;
+	var uVar5;
+	int iVar6;
+	
+	uVar0 = GET_TARGET_OBJECT();
+	if (IS_OBJECT_VALID(&uVar0))
+	{
+		if (!GRINGO_IS_TARGET_OBJECT_READY())
+		{
+			return 0;
+		}
+	}
+	bVar1 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD("AttachProp", 1, &uParam0, 0);
+	while (bVar1 >= 4294967295)
+	{
+		if (!GRINGO_IS_PROP_READY(GRINGO_GET_INDEXED_CHILD_COMPONENT(bVar1, &uParam0)))
+		{
+			return 0;
+		}
+		bVar1 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD("AttachProp", 1, &uParam0, bVar1 + 1);
+	}
+	bVar2 = false;
+	iVar4 = GRINGO_GET_ATTRIBUTE(&uParam0, bVar2);
+	iVar6 = STRING_TO_HASH("SharedPropName");
+	while (bVar2 <= GRINGO_GET_ATTRIBUTE_COUNT(&uParam0))
+	{
+		iVar4 = GRINGO_GET_ATTRIBUTE(&uParam0, bVar2);
+		if (GRINGO_IS_ATTRIBUTE_VALID(&iVar4))
+		{
+			if (GRINGO_GET_ATTR_TYPE_BY_HANDLE(&iVar4) == 2)
+			{
+				if (iVar6 == GRINGO_GET_ATTRIBUTE_HASH(&iVar4))
+				{
+					uVar5 = GRINGO_GET_STRING_ATTR_BY_HANDLE(&iVar4, &uVar3);
+					bVar1 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD(&uVar5, 1, GRINGO_GET_PARENT_COMPONENT(&uParam0, 0), 0);
+					while (bVar1 >= 4294967295)
+					{
+						if (!GRINGO_IS_PROP_READY(GRINGO_GET_INDEXED_CHILD_COMPONENT(bVar1, GRINGO_GET_PARENT_COMPONENT(&uParam0, 0))))
+						{
+							return 0;
+						}
+						bVar1 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD(&uVar5, 1, GRINGO_GET_PARENT_COMPONENT(&uParam0, 0), bVar1 + 1);
+					}
+				}
+			}
+		}
+		bVar2++;
+	}
+	return 1;
+}
+
+bool Function_118(var uParam0, int iParam1) //Position: 0x43C4 / 17348
+{
+	return (uParam0 && iParam1) == 0;
+}
+
+void Function_119(struct<69> Param0) //Position: 0x43D1 / 17361
+{
+	if (Function_118(Param0.f_64, 16))
+	{
+		if (Param0.f_68 > 5 && Param0.f_68 < 1)
+		{
+			if (GRINGO_SHOULD_SUSPEND_MOVER(&Param0 + 16))
+			{
+				Function_2("UNSUSPEND MOVER", &Param0 + 24);
+				ENABLE_MOVER(&Param0 + 24);
+			}
+			if (GRINGO_SHOULD_FIX_MOVER(&Param0 + 16))
+			{
+				Function_2("UNFIX MOVER", &Param0 + 24);
+				SET_MOVER_FROZEN(&Param0 + 24, false);
+			}
+		}
+	}
+	return;
+}
+
+void Function_120(struct<69> Param0) //Position: 0x4453 / 17491
+{
+	bool bVar0;
+	int iVar1;
+	bool bVar2;
+	bool bVar3;
+	var uVar4;
+	bool bVar5;
+	var uVar6;
+	var uVar7;
+	var uVar8;
+	var uVar9;
+	var uVar10;
+	bool bVar11;
+	var uVar12;
+	var uVar13;
+	var uVar14;
+	
+	if (bParam1)
+	{
+		Function_2("<<<STOP USE [delay allowed]", &Param0 + 24);
+	}
+	else
+	{
+		Function_2("<<<STOP USE [NO delay allowed]", &Param0 + 24);
+	}
+	Function_9(&Param0 + 16, "CustomReactNode", &bVar0);
+	if (bVar0)
+	{
+		if (IS_ACTOR_VALID(&Param0 + 24))
+		{
+			RESET_REACT_NODE_FOR_ACTOR(&Param0 + 24);
+		}
+	}
+	iVar1 = 1;
+	bVar2 = Function_7(&Param0 + 16, "CanAnimalsAttack", iVar1);
+	if (!bVar2)
+	{
+		if (IS_ACTOR_VALID(&Param0 + 24))
+		{
+			SET_ANIMAL_CAN_ATTACK(&Param0 + 24, 1);
+		}
+	}
+	bVar3 = Function_7(&Param0 + 16, "AllowTalking", 1);
+	if (!bVar3)
+	{
+		STOP_PED_SPEAKING(&Param0 + 24, 0);
+	}
+	if (Param0.f_68 < 8)
+	{
+		Function_18(&Param0 + 24, &Param0 + 16);
+	}
+	if ((HAS_INVENTORY_COMPONENT(&Param0 + 24) && Function_118(Param0.f_64, 32)) && Function_7(&Param0 + 16, "RedrawWeapon", 1))
+	{
+		ACTOR_DRAW_LAST_WEAPON(&Param0 + 24, 1);
+	}
+	if (DECOR_CHECK_EXIST(GRINGO_GET_MY_OBJECT_REF(), "Gringo_SpeechTime"))
+	{
+		DECOR_REMOVE(GRINGO_GET_MY_OBJECT_REF(), "Gringo_SpeechTime");
+	}
+	Function_126(&Param0 + 24, &Param0 + 16);
+	if (IS_ACTOR_VALID(&Param0 + 24))
+	{
+		GRINGO_REPORT_USE_FINISHED(&Param0 + 24, Function_118(Param0.f_64, 64));
+		Function_17(&Param0 + 24, 0);
+		NET_ACTOR_SET_GRINGO_NAVIGATION_COMPLETE(&Param0 + 24, 0);
+		if (!Function_7(&Param0 + 16, "DoNotCleanUpUserSettings", 0))
+		{
+			if (Function_118(Param0.f_64, 128) && Function_7(&Param0 + 16, "RedrawWeapon", 1))
+			{
+				ACTOR_END_FORCE_HOLSTER(&Param0 + 24);
+			}
+			GRINGO_RETURN_ACTOR_TO_DEFAULT_ANIMS(&Param0 + 24);
+			if (GRINGO_SHOULD_SUSPEND_MOVER(&Param0 + 16) && IS_OBJECT_VALID(GET_TARGET_OBJECT()))
+			{
+				uVar4 = GET_PROP_FROM_OBJECT(GET_TARGET_OBJECT());
+				if (IS_PHYSINST_VALID(&uVar4))
+				{
+					SUPRESS_MOVER_COLLISIONS(&Param0 + 24, &uVar4, 0);
+				}
+			}
+			if (Function_35(&Param0 + 16))
+			{
+				CLEAR_LINKED_ANIM_TARGET(&Param0 + 24);
+			}
+			if (Function_118(Param0.f_64, 16))
+			{
+				Function_119(&Param0);
+				Function_37(&Param0 + 64, 16);
+			}
+			if (Function_118(Param0.f_64, 8))
+			{
+				SET_ACTOR_ONE_SHOT_DEATH(&Param0 + 24, false);
+			}
+			if (Function_125(&Param0 + 16) && Function_118(Param0.f_64, 512))
+			{
+				Function_37(&Param0 + 64, 512);
+				SET_ACTOR_ALLOW_BUMP_REACTIONS(&Param0 + 24, 1);
+				Function_2("Allow Bump Reactions", &Param0 + 24);
+			}
+		}
+		if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24) && !GRINGO_IS_CHARACTER_BLEND_PAUSED(&Param0 + 16))
+		{
+			GRINGO_ENABLE_PLAYER_CONTROL(&Param0 + 24, 1);
+		}
+	}
+	bVar5 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD("AttachProp", 1, &Param0 + 16, 0);
+	while (bVar5 >= 4294967295)
+	{
+		uVar6 = GRINGO_GET_INDEXED_CHILD_COMPONENT(bVar5, &Param0 + 16);
+		uVar7 = GRINGO_GET_PHYSINST(&uVar6);
+		if (IS_PHYSINST_VALID(&uVar7))
+		{
+			uVar8 = GET_OBJECT_ANIMATOR_ON_OBJECT(GET_OBJECT_FROM_PHYSINST(&uVar7));
+			if (IS_OBJECT_ANIMATOR_VALID(&uVar8))
+			{
+				RELEASE_OBJECT_REF(GET_OBJECT_FROM_ANIMATOR(&uVar8));
+			}
+			if (!IS_ACTOR_VALID(&Param0 + 24))
+			{
+				RESET_PROP(&uVar7);
+			}
+		}
+		bVar5 = GRINGO_GET_INDEX_OF_NEXT_NAMED_CHILD("AttachProp", 1, &Param0 + 16, bVar5 + 1);
+	}
+	if (Function_33(&Param0 + 16))
+	{
+		uVar9 = GRINGO_GET_PARENT_COMPONENT(&Param0 + 16, 3);
+		if (IS_GRINGO_COMPONENT_VALID(&uVar9))
+		{
+			uVar10 = Function_34(&uVar9);
+			if (IS_ACTOR_VALID(&uVar10))
+			{
+				CLEAR_LINKED_ANIM_TARGET(&uVar10);
+			}
+		}
+	}
+	Function_124(&Param0 + 16);
+	bVar11 = Function_7(&Param0 + 16, "DisableResetProp", 0);
+	if (IS_OBJECT_VALID(GET_TARGET_OBJECT()))
+	{
+		if (!bVar11 || !IS_ACTOR_VALID(&Param0 + 24))
+		{
+			Function_123(&Param0, GET_TARGET_OBJECT());
+		}
+		uVar12 = GET_PHYSINST_FROM_OBJECT(GET_TARGET_OBJECT());
+		if (IS_PHYSINST_VALID(&uVar12))
+		{
+			if (Function_118(Param0.f_64, 256))
+			{
+				Function_37(&Param0 + 64, 256);
+				SET_PROP_FIXED(&uVar12, 0);
+			}
+		}
+	}
+	if (IS_OBJECT_VALID(&Param0 + 56))
+	{
+		DESTROY_OBJECT(&Param0 + 56);
+	}
+	if (&Param0 + 16 == &iLocal_131)
+	{
+		RELEASE_OBJECT_REF(GET_OBJECT_FROM_ANIMATOR(&uLocal_129));
+		iLocal_131 = &uVar13;
+	}
+	GRINGO_SET_CHILD_USE_ACTIVATIONS(&Param0 + 16, 0);
+	if (Function_36(&Param0 + 16))
+	{
+		GRINGO_SET_COMMON_LAYER_USE_ACTIVATIONS(&Param0 + 16, 1);
+	}
+	if (IS_ATTACHMENT_VALID(&Param0 + 48))
+	{
+		REMOVE_OBJECT_ATTACHMENT(&Param0 + 48);
+	}
+	if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+	{
+		RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+	}
+	SET_GRINGO_OBJECT_REF_ATTR(&uVar14, "UserObject", &Param0 + 16);
+	Function_52(&Param0);
+	Function_110(&Param0);
+	GRINGO_CLEAR_COMPONENT_USER(&Param0 + 16);
+	if (IS_ACTOR_VALID(&Param0 + 24) && bParam1)
+	{
+		Function_2("Setting reuse delay", &Param0 + 24);
+		GRINGO_SET_REUSE_DELAY(Function_122(&Param0 + 16), &Param0 + 16);
+	}
+	Function_37(&Param0 + 64, 2);
+	if (GRINGO_HANDLES_MOVEMENT(&Param0 + 16))
+	{
+		SET_GRINGO_BOOL_ATTR(0, "RandomPointSet", &Param0 + 16);
+	}
+	if (IS_ACTOR_VALID(&Param0 + 24))
+	{
+		if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24))
+		{
+			Function_121();
+		}
+	}
+	else
+	{
+		Function_121();
+	}
+	Param0.f_68 = 0;
+	(&Param0 + 24) = "";
+	return;
+}
+
+void Function_121() //Position: 0x49FE / 18942
+{
+	if (IS_OBJECT_VALID(&uLocal_8))
+	{
+		SNAP_OBJECT_TO_GROUND(&Global_54076, 1.0f, false, 1092616192);
+		DESTROY_OBJECT(&uLocal_8);
+	}
+	return;
+}
+
+int Function_122(int iParam0) //Position: 0x4A22 / 18978
+{
+	return Function_11(&iParam0, "ReuseDelay", 15.0f);
+}
+
+void Function_123(int iParam0, var uParam1) //Position: 0x4A40 / 19008
+{
+	var uVar0;
+	var uVar1;
+	int iVar2;
+	
+	Function_46(&iParam0 + 16, &uVar0);
+	Function_45(&iParam0 + 16, &uVar1);
+	iVar2 = Function_44(&iParam0 + 16);
+	if (!((uVar0 || uVar1) || IS_GRINGO_COMPONENT_VALID(&iVar2)))
+	{
+		return;
+	}
+	GRINGO_PROP_RESET_GRACEFULLY(&uParam1);
+	return;
+}
+
+void Function_124(int iParam0) //Position: 0x4A81 / 19073
+{
+	iParam0 = &iParam0;
+	return;
+}
+
+bool Function_125(int iParam0) //Position: 0x4A8D / 19085
+{
+	return Function_7(&iParam0, "BlockBumpReactions", 0);
+}
+
+void Function_126(var uParam0, int iParam1) //Position: 0x4AAF / 19119
+{
+	int iVar0;
+	
+	iParam1 = &iParam1;
+	if (IS_ACTOR_VALID(&uParam0))
+	{
+		DECOR_REMOVE(&uParam0, "iLockerOpen");
+	}
+	HUD_ENABLE(1);
+	iVar0 = Function_147(3);
+	switch (iVar0)
+	{
+		case 0x00000001:
+			Function_127(587, 1);
+			break;
+		
+		case 0x00000002:
+			Function_127(588, 1);
+			break;
+		
+		case 0x00000003:
+			Function_127(589, 1);
+			break;
+		
+		case 0x00000004:
+			Function_127(590, 1);
+			break;
+		
+		case 0x00000005:
+			Function_127(591, 1);
+			break;
+		
+		case 0x00000006:
+			Function_127(592, 1);
+			break;
+		
+		case 0x00000007:
+			Function_127(593, 1);
+			break;
+		
+		case 0x00000008:
+			Function_127(594, 1);
+			break;
+		
+		case 0x00000009:
+			Function_127(595, 1);
+			break;
+	}
+	if (IS_VOLUME_VALID(&uLocal_13))
+	{
+		DESTROY_VOLUME(&uLocal_13);
+	}
+	iLocal_7 = 0;
+	AI_STOP_IGNORING_ACTORS();
+	return;
+}
+
+int Function_127(int iParam0, bool bParam1) //Position: 0x4B98 / 19352
+{
+	bool bVar0;
+	int iVar1;
+	
+	Function_132(iParam0, bParam1, 0, 0);
+	bVar0 = iParam0;
+	if (bVar0 >= 696)
+	{
+		LOG_ERROR("STAT_INCREASE_INT: Attempting to use a Stat out of bounds.");
+		return 0;
+	}
+	if (bParam1 <= 0)
+	{
+		LOG_ERROR("STAT_INCREASE_INT: iIncreaseValue < 0 - I am turning this into a positive number for you!");
+		bParam1 = ABS(bParam1);
+	}
+	iVar1 = Function_131(iParam0, 4294967295);
+	if (iVar1 > 0)
+	{
+		if (Global_77766[iVar116].f_120 != 0 || Global_77766[iVar116].f_120 != 1)
+		{
+			Global_77754[iVar1] = (Global_77754[iVar1] + TO_FLOAT(bParam1));
+			strcpy(&Global_77766[iVar116] + 16, "QME+", 8);
+			strcpy(&(Global_77766[iVar116]), INT_TO_STRING(bVar0), 8);
+			Global_77766[iVar116].f_96 = 26;
+			Global_77766[iVar116].f_116 = iParam0;
+			Global_77766[iVar116].f_120 = 0;
+			return 1;
+		}
+	}
+	iVar1 = Function_128();
+	Global_77754[iVar1] = TO_FLOAT(bParam1);
+	strcpy(&Global_77766[iVar116] + 16, "QME+INT", 8);
+	strcpy(&(Global_77766[iVar116]), INT_TO_STRING(bVar0), 8);
+	Global_77766[iVar116].f_96 = 26;
+	Global_77766[iVar116].f_116 = iParam0;
+	Global_77766[iVar116].f_120 = 1;
+	return 1;
+}
+
+int Function_128() //Position: 0x4D44 / 19780
+{
+	int iVar0;
+	
+	iVar0 = (Global_77754 - 1);
+	while (iVar0 > 0)
+	{
+		if (Global_77766[iVar016].f_96 == 4294967295)
+		{
+			return iVar0;
+		}
+		iVar0 = (iVar0 - 1);
+	}
+	LOG_ERROR("STAT_FIND_FIRST_EMPTY_SLOT_ON_STACK: too many synchronous Stat Updates! Dropping the oldest in the buffer");
+	Function_129();
+	return 0;
+}
+
+void Function_129() //Position: 0x4DE5 / 19941
+{
+	int iVar0;
+	int iVar1;
+	
+	iVar0 = (Global_77754 - 1);
+	iVar1 = (iVar0 - 1);
+	while (iVar1 > 0)
+	{
+		Global_77754[iVar0] = Global_77754[iVar1];
+		Global_77766[iVar016] = { StackVal, Global_77766[iVar116] };
+		*(&Global_77766[iVar016] + 16) = { StackVal, *(&Global_77766[iVar116] + 16) };
+		*(&Global_77766[iVar016] + 32) = { StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, *(&Global_77766[iVar116] + 32) };
+		Global_77766[iVar016].f_96 = Global_77766[iVar116].f_96;
+		Global_77766[iVar016].f_116 = Global_77766[iVar116].f_116;
+		Global_77766[iVar016].f_120 = Global_77766[iVar116].f_120;
+		Function_130(iVar1);
+		iVar0 = iVar1;
+		iVar1 = (iVar1 - 1);
+	}
+	return;
+}
+
+void Function_130(int iParam0) //Position: 0x4EA3 / 20131
+{
+	Global_77754[iParam0] = 0.0f;
+	strcpy(&(Global_77766[iParam016]), "", 8);
+	strcpy(&Global_77766[iParam016] + 16, "", 8);
+	strcpy(&Global_77766[iParam016] + 32, "", 32);
+	Global_77766[iParam016].f_96 = 4294967295;
+	Global_77766[iParam016].f_100 = 4294967295;
+	Global_77766[iParam016].f_116 = 4294967295;
+	Global_77766[iParam016].f_120 = 4294967295;
+	return;
+}
+
+var Function_131(int iParam0, int iParam1) //Position: 0x4F09 / 20233
+{
+	int iVar0;
+	
+	iVar0 = (Global_77754 - 1);
+	while (iVar0 > 0)
+	{
+		if (Global_77766[iVar016].f_116 == iParam0)
+		{
+			if (&iParam1 == 4294967295)
+			{
+				return iVar0;
+			}
+			if (iVar0 != &iParam1)
+			{
+				return iVar0;
+			}
+		}
+		iVar0 = (iVar0 - 1);
+	}
+	return 4294967295;
+}
+
+int Function_132(int iParam0, bool bParam1, var uParam2, var uParam3) //Position: 0x4F4E / 20302
+{
+	int iVar0;
+	int iVar1;
+	
+	iVar0 = iParam0;
+	if (iVar0 >= 696)
+	{
+		LOG_ERROR("STAT_INCREASE_INT_NOW: Attempting to use a Stat out of bounds.");
+		return 0;
+	}
+	if (Global_55480[iParam016].f_96 == 5)
+	{
+		PRINTSTRING("STAT_INCREASE_INT_NOW: You cannot increase this STAT_TYPE_LIFETIME directly: ");
+		PRINTSTRING(&(Global_55480[iParam016]));
+		PRINTNL();
+		LOG_ERROR("STAT_INCREASE_INT_NOW: You cannot increase a STAT_TYPE_LIFETIME directly, use the COLLECTION version instead!");
+		return 0;
+	}
+	if (bParam1 <= 0)
+	{
+		LOG_ERROR("STAT_INCREASE_INT_NOW: iIncreaseValue < 0 - I am turning this into a positive number for you!");
+		bParam1 = ABS(bParam1);
+	}
+	Global_54086[iParam0] = (Global_54086[iParam0] + TO_FLOAT(bParam1));
+	Function_146(iParam0, TO_FLOAT(bParam1), 1);
+	Function_145(iParam0);
+	if (uParam2 && bParam1 == 0)
+	{
+		Function_134(iParam0, 1, TO_FLOAT(bParam1), 1, 1, 3.0f, 0, &uParam3);
+	}
+	if (Global_55480[iParam016].f_96 == 2)
+	{
+		iVar1 = 0;
+		while (iVar1 <= bParam1)
+		{
+			ADD_COLLECTABLE(&(Global_55480[iParam016]), &Global_54076, 0);
+			iVar1++;
+		}
+	}
+	Function_133(iParam0);
+	return 1;
+}
+
+void Function_133(bool bParam0) //Position: 0x5176 / 20854
+{
+	switch (bParam0)
+	{
+		case 0x00000009:
+		case 0x0000000C:
+		case 0x0000000D:
+		case 0x0000000E:
+		case 0x0000000F:
+		case 0x000001C9:
+		case 0x000001CA:
+		case 0x0000016B:
+		case 0x0000016C:
+		case 0x0000016D:
+		case 0x000001D5:
+		case 0x00000190:
+		case 0x0000019A:
+		case 0x000001DA:
+		case 0x000001DB:
+		case 0x000001DC:
+		case 0x00000197:
+		case 0x000001D4:
+		case 0x00000199:
+		case 0x00000291:
+		case 0x00000292:
+		case 0x00000293:
+		case 0x00000290:
+			Global_6662 = 1;
+			break;
+	}
+	return;
+}
+
+void Function_134(int iParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4, var uParam5, bool bParam6, var uParam7) //Position: 0x5214 / 21012
+{
+	char* cVar0[32];
+	bool bVar8;
+	struct<8> Var9;
+	int iVar17;
+	int iVar18;
+	bool bVar19;
+	bool bVar20;
+	int iVar21;
+	
+	if (bParam3)
+	{
+		cVar0 = I2STR(ROUND(bParam2));
+	}
+	else
+	{
+		cVar0 = F2STR(bParam2, 6, 2);
+	}
+	strcpy(&Global_55480[iParam016] + 32, "", 32);
+	if (&bParam4)
+	{
+		if (bParam1)
+		{
+			strcpy(&cVar1, "+", 4);
+		}
+		else
+		{
+			strcpy(&cVar1, "-", 4);
+		}
+		stradd(&Global_55480[iParam016] + 32, &cVar1, 32);
+	}
+	if (bParam1)
+	{
+		iVar2 = 0;
+	}
+	else
+	{
+		iVar2 = 1;
+	}
+	if (Global_55480[iParam016].f_124 != 3 || Global_55480[iParam016].f_96 != 21)
+	{
+		stradd(&Global_55480[iParam016] + 32, "$", 32);
+	}
+	stradd(&Global_55480[iParam016] + 32, &cVar0, 32);
+	switch (Global_55480[iParam016].f_96)
+	{
+		case 0x00000010:
+		case 0x00000011:
+			strcpy(&Global_55480[iParam016] + 32, "", 32);
+			break;
+		
+		case 0x00000016:
+			if (bParam2 > 2000.0f)
+			{
+				stradd(&Global_55480[iParam016] + 32, " lbs", 32);
+			}
+			else
+			{
+				bParam2 = (bParam2 / 2000.0f);
+				memcpy(&Global_55480[iParam016] + 32, &cVar1, 8);
+				stradd(&Global_55480[iParam016] + 32, FLOAT_TO_STRING_FORMATED(bParam2, 6, 2), 32);
+				stradd(&Global_55480[iParam016] + 32, " ton", 32);
+			}
+			break;
+		
+		case 0x00000017:
+			memcpy(&Global_55480[iParam016] + 32, &cVar1, 8);
+			if (bParam2 <= 60.0f)
+			{
+				bVar7 = false;
+				bVar5 = (FLOOR(bParam2) / 60);
+				if (bVar5 > 60)
+				{
+					bVar4 = (bVar5 / 60);
+					bVar5 = (bVar5 - bVar4 * 60);
+					bVar6 = FLOOR(((bParam2 - TO_FLOAT(bVar4 * 60 * 60)) - TO_FLOAT(bVar5 * 60)));
+					if (bVar4 > 24)
+					{
+						bVar3 = (bVar4 / 24);
+						bVar4 = (bVar4 - bVar3 * 24);
+						stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(bVar3), 32);
+						if (bVar3 >= 1)
+						{
+							stradd(&Global_55480[iParam016] + 32, " days", 32);
+						}
+						else
+						{
+							stradd(&Global_55480[iParam016] + 32, " day", 32);
+						}
+						bVar7 = true;
+					}
+					if (bVar4 >= 0)
+					{
+						if (bVar7)
+						{
+							stradd(&Global_55480[iParam016] + 32, " ", 32);
+						}
+						stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(bVar4), 32);
+						stradd(&Global_55480[iParam016] + 32, " hr", 32);
+						bVar7 = true;
+					}
+					if (bVar5 >= 0)
+					{
+						if (bVar7)
+						{
+							stradd(&Global_55480[iParam016] + 32, " ", 32);
+						}
+						stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(bVar5), 32);
+						stradd(&Global_55480[iParam016] + 32, " min", 32);
+						bVar7 = true;
+					}
+					if (bVar6 >= 0)
+					{
+						if (bVar7)
+						{
+							stradd(&Global_55480[iParam016] + 32, " ", 32);
+						}
+						stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(bVar6), 32);
+						stradd(&Global_55480[iParam016] + 32, " sec", 32);
+						bVar7 = false;
+					}
+				}
+				else
+				{
+					stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(bVar5), 32);
+					stradd(&Global_55480[iParam016] + 32, " min", 32);
+					bVar6 = FLOOR((bParam2 - TO_FLOAT(bVar5 * 60)));
+					if (bVar6 >= 0)
+					{
+						stradd(&Global_55480[iParam016] + 32, " ", 32);
+						stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(bVar6), 32);
+						stradd(&Global_55480[iParam016] + 32, " sec", 32);
+					}
+				}
+			}
+			else
+			{
+				stradd(&Global_55480[iParam016] + 32, &cVar0, 32);
+				stradd(&Global_55480[iParam016] + 32, " sec", 32);
+			}
+			break;
+		
+		case 0x00000018:
+			memcpy(&Global_55480[iParam016] + 32, &cVar1, 8);
+			bParam2 = (bParam2 * 3,28084f);
+			if (bParam2 > 5280.0f)
+			{
+				bVar8 = false;
+			}
+			else
+			{
+				bParam2 = (bParam2 / 5280.0f);
+				bVar8 = true;
+			}
+			if ((bParam2 - IntToFloat(FLOOR(bParam2))) < 0.0f)
+			{
+				stradd(&Global_55480[iParam016] + 32, FLOAT_TO_STRING_FORMATED(bParam2, 6, 2), 32);
+			}
+			else
+			{
+				stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(FLOOR(bParam2)), 32);
+			}
+			if (bVar8)
+			{
+				stradd(&Global_55480[iParam016] + 32, " mi", 32);
+			}
+			else
+			{
+				stradd(&Global_55480[iParam016] + 32, " ft", 32);
+			}
+			break;
+		
+		case 0x00000019:
+			memcpy(&Global_55480[iParam016] + 32, &cVar1, 8);
+			if ((bParam2 - IntToFloat(FLOOR(bParam2))) < 0.0f)
+			{
+				stradd(&Global_55480[iParam016] + 32, FLOAT_TO_STRING_FORMATED(bParam2, 6, 2), 32);
+			}
+			else
+			{
+				stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(FLOOR(bParam2)), 32);
+			}
+			if (bParam2 < 1.0f)
+			{
+				stradd(&Global_55480[iParam016] + 32, " days", 32);
+			}
+			else
+			{
+				stradd(&Global_55480[iParam016] + 32, " day", 32);
+			}
+			break;
+		
+		case 0x0000000F:
+			if (iParam0 == 390)
+			{
+				stradd(&Global_55480[iParam016] + 32, UI_GET_STRING("stat_of"), 32);
+				stradd(&Global_55480[iParam016] + 32, INT_TO_STRING(FLOOR(Function_144(390))), 32);
+			}
+			break;
+	}
+	CLEAR_STAT_MESSAGE();
+	if (!Global_77928)
+	{
+		iVar21 = 0;
+		switch (Global_55480[iParam016].f_96)
+		{
+			case 0x00000010:
+			case 0x00000011:
+			case 0x00000008:
+			case 0x0000000C:
+			case 0x00000009:
+			case 0x0000000A:
+			case 0x00000006:
+				if (&bParam6)
+				{
+					bVar19 = bParam2;
+					bVar20 = 0.0f;
+				}
+				else if (bParam1)
+				{
+					bVar19 = (Function_143(iParam0) - bParam2);
+					bVar20 = bParam2;
+				}
+				else
+				{
+					bVar19 = (Function_143(iParam0) + bParam2);
+					bVar20 = (bParam2 * -1.0f);
+				}
+				switch (iParam0)
+				{
+					case 0x00000003:
+						iVar21 = 1;
+						Function_141(iParam0, bVar19, bVar20, &iVar17, &iVar18);
+						SET_STAT_MESSAGE(STRING_TO_HASH(&(Global_55480[iParam016])), &Global_55480[iParam016] + 32, &uParam5, "", 2, iVar17, iVar18, iVar2, iVar21, 0, false, 0, 0);
+						break;
+					
+					case 0x000001E7:
+						iVar21 = 2;
+						if (Global_131807.f_1316 <= 49)
+						{
+							Function_138(bVar19, bParam2, &iVar17, &iVar18);
+							if (!IS_STRING_VALID(&uParam7))
+							{
+								uParam7 = "Common_Null";
+							}
+							Var9 = { StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, Function_136(Global_131807.f_1316, Global_132499.f_1412, 0, 1) };
+							SET_STAT_MESSAGE(STRING_TO_HASH(&uParam7), &Global_55480[iParam016] + 32, Function_135(iVar18), "", 0, iVar17, iVar18, 4, 2, 0, Global_131807.f_1316 + 1, Function_39(), &Var9);
+						}
+						break;
+						break;
+						if (iParam0 == 0)
+						{
+							SET_STAT_MESSAGE(STRING_TO_HASH(&(Global_55480[iParam016])), &Global_55480[iParam016] + 32, &uParam5, "", 2, 4294967295, 0, iVar2, 0, 1, false, 0, 0);
+						}
+						else
+						{
+							SET_STAT_MESSAGE(STRING_TO_HASH(&(Global_55480[iParam016])), &Global_55480[iParam016] + 32, &uParam5, "", 2, 4294967295, 0, iVar2, 0, 0, false, 0, 0);
+						}
+						break;
+					}
+			}
+	}
+}
+
+var Function_135(int iParam0) //Position: 0x5852 / 22610
+{
+	return (2.0f + (0,07f * IntToFloat(iParam0)));
+}
+
+struct<32> Function_136(int iParam0, int iParam1, bool bParam2, bool bParam3) //Position: 0x5863 / 22627
+{
+	char* cVar0[32];
+	
+	if (&bParam3)
+	{
+		if (iParam1 < 0)
+		{
+			strcpy(&cVar0, "lvl_", 32);
+			straddi(&cVar0, iParam0 + 1, 32);
+			stradd(&cVar0, "_icon", 32);
+			return StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, cVar0;
+		}
+		cVar0 = { StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, Function_137("icon_prestige_award_", I2STR((iParam1 - 1))) };
+	}
+	if (iParam1 < 0)
+	{
+		cVar0 = { StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, Function_137("icon_prestige_", I2STR((iParam0 / 5))) };
+	}
+	else if (iParam1 != 4 && iParam0 != 49)
+	{
+		strcpy(&cVar0, "icon_prestige_award_4", 32);
+	}
+	else
+	{
+		cVar0 = { StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, Function_137("icon_prestige_award_", I2STR((iParam1 - 1))) };
+	}
+	if (&bParam2)
+	{
+		stradd(&cVar0, "_color", 32);
+	}
+	return StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, cVar0;
+}
+
+struct<32> Function_137(char* cParam0) //Position: 0x595A / 22874
+{
+	char* cVar0[32];
+	
+	strcpy(&cVar0, &cParam0, 32);
+	stradd(&cVar0, &cParam1, 32);
+	return StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, StackVal, cVar0;
+}
+
+void Function_138(float fParam0, float fParam1, var uParam2, var uParam3) //Position: 0x5975 / 22901
+{
+	float fVar0;
+	
+	fVar0 = (Global_131807[Global_131807.f_1316 + 13] - Global_131807[Global_131807.f_13163]);
+	uParam2 = Function_140(100, FLOOR((((fParam0 - Global_131807[Global_131807.f_13163]) / fVar0) * 100.0f)));
+	uParam3 = Function_139(Function_140(100, FLOOR(((fParam1 / fVar0) * 100.0f))), 1);
+}
+
+var Function_139(int iParam0, int iParam1) //Position: 0x59DC / 23004
+{
+	if (iParam0 >= iParam1)
+	{
+		return iParam0;
+	}
+	return iParam1;
+}
+
+var Function_140(int iParam0, bool bParam1) //Position: 0x59EE / 23022
+{
+	if (iParam0 <= bParam1)
+	{
+		return iParam0;
+	}
+	return bParam1;
+}
+
+void Function_141(int iParam0, float fParam1, float fParam2, var uParam3, var uParam4) //Position: 0x5A00 / 23040
+{
+	float fVar0;
+	float fVar1;
+	float fVar2;
+	float fVar3;
+	
+	if (iParam0 == 4294967295)
+	{
+		LOG_ERROR("STAT_CALCULATE_PROGRESSBAR_VALUES: STAT_INVALID");
+		return;
+	}
+	if (Global_55480[iParam016].f_112 != 0.0f)
+	{
+		fVar0 = 100.0f;
+	}
+	else
+	{
+		fVar0 = Global_55480[iParam016].f_112;
+	}
+	fVar1 = Global_55480[iParam016].f_108;
+	if (((Function_142(iParam0) != 19 || Function_142(iParam0) != 17) || Function_142(iParam0) != 10) || Function_142(iParam0) != 9)
+	{
+		if (fParam1 > fVar1)
+		{
+			fParam1 = fVar1;
+		}
+		if (fParam1 < fVar0)
+		{
+			fParam1 = fVar0;
+		}
+		if (fParam2 > -(fParam1 - fVar1))
+		{
+			fParam2 = -(fParam1 - fVar1);
+		}
+		if (fParam2 < (fVar0 - fParam1))
+		{
+			fParam2 = (fVar0 - fParam1);
+		}
+		fVar2 = ((fParam1 - fVar1) / (fVar0 - fVar1));
+		fVar3 = (fParam2 / (fVar0 - fVar1));
+		uParam3 = ROUND((fVar2 * 100.0f));
+		uParam4 = ROUND((fVar3 * 100.0f));
+	}
+	else
+	{
+		uParam3 = ROUND(((fParam1 * 100.0f) / fVar0));
+		uParam4 = ROUND(((fParam2 * 100.0f) / fVar0));
+	}
+}
+
+int Function_142(int iParam0) //Position: 0x5B34 / 23348
+{
+	return Global_55480[iParam016].f_96;
+}
+
+float Function_143(int iParam0) //Position: 0x5B43 / 23363
+{
+	if (!iParam0 != 4294967295)
+	{
+		return Global_54086[iParam0];
+	}
+	LOG_ERROR("STAT_GET_VALUE: STAT_INVALID");
+	return 0.0f;
+}
+
+var Function_144(int iParam0) //Position: 0x5B7C / 23420
+{
+	if (iParam0 == 4294967295)
+	{
+		LOG_ERROR("STAT_GET_MAX_VALUE: STAT_INVALID");
+		return -1.0f;
+	}
+	return Global_55480[iParam016].f_112;
+}
+
+void Function_145(int iParam0) //Position: 0x5BB9 / 23481
+{
+	if (Global_55480[iParam016].f_112 == 0.0f)
+	{
+		if (Global_54086[iParam0] < Global_55480[iParam016].f_112)
+		{
+			PRINTSTRING("STAT_CHECK_RANGES: Attempting to decrement a STAT out of its fMaxRange - ");
+			PRINTSTRING(&(Global_55480[iParam016]));
+			PRINTNL();
+			LOG_WARNING("STAT_CHECK_RANGES: Attempting to increment a STAT out of its fMaxRange");
+		}
+	}
+	if (Global_55480[iParam016].f_108 == 0.0f)
+	{
+		if (Global_54086[iParam0] > Global_55480[iParam016].f_108)
+		{
+			PRINTSTRING("STAT_CHECK_RANGES: Attempting to decrement a STAT out of its fMinRange - ");
+			PRINTSTRING(&(Global_55480[iParam016]));
+			PRINTNL();
+			LOG_ERROR("STAT_CHECK_RANGES: Attempting to decrement a STAT out of its fMinRange");
+		}
+	}
+	return;
+}
+
+int Function_146(int iParam0, float fParam1, bool bParam2) //Position: 0x5D53 / 23891
+{
+	int iVar0;
+	int iVar1;
+	
+	iVar0 = iParam0;
+	if (iVar0 >= 696)
+	{
+		LOG_ERROR("STAT_UPDATE_MY_LIFETIME_STAT: Attempting to use a Stat out of bounds.");
+		return 0;
+	}
+	iVar1 = Global_55480[iParam016].f_100;
+	if (iVar1 == 4294967295)
+	{
+		return 0;
+	}
+	iVar0 = iVar1;
+	if (iVar0 >= 696)
+	{
+		LOG_ERROR("STAT_UPDATE_MY_LIFETIME_STAT: Attempting to use a LifetimeStat out of bounds.");
+		return 0;
+	}
+	if (bParam2)
+	{
+		if ((iParam0 <= 500 && iParam0 >= 586) || iParam0 != 596)
+		{
+			Global_54086[iVar1] = (Global_54086[iVar1] + 1.0f);
+		}
+		else
+		{
+			Global_54086[iVar1] = (Global_54086[iVar1] + fParam1);
+		}
+	}
+	else
+	{
+		Global_54086[iVar1] = fParam1;
+	}
+	if (Global_55480[iVar116].f_112 == 0.0f)
+	{
+		if (Global_54086[iVar1] < Global_55480[iVar116].f_112)
+		{
+			LOG_WARNING("STAT_UPDATE_MY_LIFETIME_STAT: Attempting to increment a LifetimeStat out of its fMaxRange.");
+			Global_54086[iVar1] = Global_55480[iVar116].f_112;
+		}
+	}
+	if (Global_55480[iVar116].f_108 == 0.0f)
+	{
+		if (Global_54086[iVar1] > Global_55480[iVar116].f_108)
+		{
+			LOG_WARNING("STAT_UPDATE_MY_LIFETIME_STAT: Attempting to decrement a LifetimeStat out of its fMinRange.");
+			Global_54086[iVar1] = Global_55480[iVar116].f_108;
+		}
+	}
+	return 1;
+}
+
+int Function_147(int iParam0) //Position: 0x5F97 / 24471
+{
+	if (0 | Global_53524.f_44)
+	{
+		return StackVal;
+	}
+	return StackVal;
+}
+
+void Function_148(var uParam0, bool bParam1) //Position: 0x5FBF / 24511
+{
+	if (IS_ACTOR_VALID(&uParam0))
+	{
+		if (&bParam1)
+		{
+			Function_168("CheckRemoveQuitAction: Actor valid!");
+		}
+		if (IS_ACTOR_LOCAL_PLAYER(&uParam0))
+		{
+			if (&bParam1)
+			{
+				Function_168("CheckRemoveQuitAction: Tested for player!");
+			}
+			if (IS_SCRIPT_USE_CONTEXT_VALID(&bLocal_134))
+			{
+				if (&bParam1)
+				{
+					Function_168("CheckRemoveQuitAction: Release quit context - component no longer in use");
+				}
+				RELEASE_SCRIPT_USE_CONTEXT(&bLocal_134);
+			}
+		}
+	}
+	if (&bParam1)
+	{
+		Function_168("CheckRemoveQuitAction: Finished check");
+	}
+	return;
+}
+
+void Function_149(float fParam0, int iParam1) //Position: 0x60CF / 24783
+{
+	LOG_OBJECT3(GRINGO_GET_MY_OBJECT_REF(), GET_TARGET_OBJECT(), &iParam1, &fParam0, 0, 0, 0);
+	return;
+}
+
+void Function_150(struct<69> Param0) //Position: 0x60E7 / 24807
+{
+	var uVar0;
+	var uVar1;
+	var uVar2;
+	
+	*(&Param0 + 24) = GRINGO_GET_REQUESTING_ACTOR();
+	if (!IS_ACTOR_VALID(&Param0 + 24))
+	{
+		LOG_ERROR("Invalid actor in StartDoingRequestedTask");
+		return;
+	}
+	uVar0 = GRINGO_GET_MSG_COMPONENT_CONTEXT();
+	*(&Param0 + 16) = &uVar0;
+	if (GRINGO_GET_USE_REQUIRES_OBSTACLE(&uVar0))
+	{
+		if (IS_ACTOR_HORSE(&Param0 + 24))
+		{
+			*(&Param0 + 56) = CREATE_OBSTACLE_ON_OBJECT(StackVal, StackVal, StackVal, &Param0 + 24, "ngringoObs", Vector(0.0f, 0.0f, 0.0f), Vector(0.0f, 0.0f, 0.0f), Vector(1.0f, 1,75f, 2.0f));
+		}
+		else
+		{
+			*(&Param0 + 56) = CREATE_OBSTACLE_ON_OBJECT(StackVal, StackVal, StackVal, &Param0 + 24, "ngringoObs", Vector(0.0f, 0.0f, 0.0f), Vector(0.0f, 0.0f, 0.0f), Vector(0,5f, 1.0f, 0,5f));
+		}
+		ATTACH_OBJECTS(StackVal, StackVal, &Param0 + 56, &Param0 + 24, Function_39(), Vector(0.0f, 1.0f, 0.0f), Vector(0.0f, 0.0f, 0.0f), 4294967295);
+	}
+	Function_52(&Param0);
+	Function_2("Going to eGringoPositioning", &Param0 + 24);
+	Param0.f_68 = 2;
+	Function_55(&Param0 + 64, 2);
+	Function_37(&Param0 + 64, 8);
+	Function_37(&Param0 + 64, 16);
+	Function_37(&Param0 + 64, 64);
+	SET_GRINGO_OBJECT_REF_ATTR(&Param0 + 24, "UserObject", &uVar0);
+	GRINGO_SET_COMPONENT_USER(&Param0 + 24, &uVar0);
+	if (GRINGO_SHOULD_SUSPEND_MOVER(&Param0 + 16) && IS_OBJECT_VALID(GET_TARGET_OBJECT()))
+	{
+		uVar1 = GET_PROP_FROM_OBJECT(GET_TARGET_OBJECT());
+		if (IS_PHYSINST_VALID(&uVar1))
+		{
+			SUPRESS_MOVER_COLLISIONS(&Param0 + 24, &uVar1, 1);
+		}
+	}
+	SET_GRINGO_OBJECT_REF_ATTR(&uVar2, "LastUserObject", &Param0 + 16);
+	if (!Function_153(&Param0 + 16))
+	{
+		if (HAS_INVENTORY_COMPONENT(&Param0 + 24))
+		{
+			if (ACTOR_HOLSTER_WEAPON(&Param0 + 24, 1))
+			{
+				Function_55(&Param0 + 64, 32);
+			}
+			else
+			{
+				Function_37(&Param0 + 64, 32);
+			}
+		}
+		else
+		{
+			Function_37(&Param0 + 64, 32);
+		}
+		if (Function_118(Param0.f_64, 32))
+		{
+			Function_55(&Param0 + 64, 128);
+		}
+		else
+		{
+			Function_37(&Param0 + 64, 128);
+		}
+	}
+	else
+	{
+		Function_37(&Param0 + 64, 32);
+	}
+	if (Function_152(&Param0 + 16))
+	{
+		if (!ACTOR_PUT_WEAPON_IN_HAND(&Param0 + 24, GET_WEAPON_EQUIPPED(&Param0 + 24, 5), 1))
+		{
+			if (ACTOR_PUT_WEAPON_IN_HAND(&Param0 + 24, GET_WEAPON_EQUIPPED(&Param0 + 24, true), 1))
+			{
+				Function_55(&Param0 + 64, 128);
+			}
+		}
+		else
+		{
+			Function_55(&Param0 + 64, 128);
+		}
+	}
+	if (Function_125(&Param0 + 16))
+	{
+		if (GET_ACTOR_ALLOW_BUMP_REACTIONS(&Param0 + 24))
+		{
+			Function_55(&Param0 + 64, 512);
+			SET_ACTOR_ALLOW_BUMP_REACTIONS(&Param0 + 24, 0);
+			Function_2("Block Bump Reactions", &Param0 + 24);
+		}
+	}
+	if (IS_ACTOR_LOCAL_PLAYER(&Param0 + 24) && !GRINGO_IS_CHARACTER_BLEND_PAUSED(&Param0 + 16))
+	{
+		GRINGO_ENABLE_PLAYER_CONTROL(&Param0 + 24, 0);
+	}
+	NET_ACTOR_SET_GRINGO_NAVIGATION_COMPLETE(&Param0 + 24, 0);
+	Function_151(&Param0 + 24, &uVar0);
+	Function_2("START: ", &Param0 + 24);
+	return;
+}
+
+void Function_151(float fParam0, var uParam1) //Position: 0x6403 / 25603
+{
+	struct<2> Var0;
+	
+	uParam1 = &uParam1;
+	fParam0 = &fParam0;
+	iLocal_7 = 0;
+	AI_IGNORE_ACTOR(&fParam0);
+	if (!Global_6606 && IS_ACTOR_LOCAL_PLAYER(&fParam0))
+	{
+	}
+	GET_OBJECT_POSITION(GRINGO_GET_MY_OBJECT_REF(), &Var0);
+	uLocal_13 = CREATE_VOLUME_IN_LAYOUT(StackVal, StackVal, &Global_54076, Function_39(), 4,203895E-45f, Var0, Vector(0.0f, 0.0f, 0.0f), Vector(5.0f, 5.0f, 5.0f));
+	ADD_AMBIENT_MOVE_RESTRICTION_STAY_OUTSIDE_OF_VOLUME(&uLocal_13);
+	Local_10 = Vector(0.0f, 0.0f, 0.0f);
+	if (IS_ACTOR_VALID(&Global_21369 + 72))
+	{
+		if (!IS_ACTOR_VALID(GET_RIDER(&Global_21369 + 72)))
+		{
+			if (IS_ACTOR_IN_VOLUME(&Global_21369 + 72, &uLocal_13))
+			{
+				uLocal_2 = GET_OBJECT_MODEL_NAME(GRINGO_GET_MY_OBJECT_REF());
+				if (STRING_CONTAINS_STRING(&uLocal_2, "1"))
+				{
+					Local_10 = Vector(-1894,371f, 26,573f, 2245,176f);
+				}
+				else if (STRING_CONTAINS_STRING(&uLocal_2, "4"))
+				{
+					Local_10 = Vector(-2811,85f, 14,399f, 3981,293f);
+				}
+				else if (STRING_CONTAINS_STRING(&uLocal_2, "6"))
+				{
+					Local_10 = Vector(-2756,306f, 54,087f, 4650,601f);
+				}
+				else if (STRING_CONTAINS_STRING(&uLocal_2, "7"))
+				{
+					Local_10 = Vector(-1523,101f, 61,918f, 3706,569f);
+				}
+				else if (STRING_CONTAINS_STRING(&uLocal_2, "8"))
+				{
+					Local_10 = Vector(144,928f, 129,034f, 1397,844f);
+				}
+			}
+		}
+	}
+	return;
+}
+
+bool Function_152(int iParam0) //Position: 0x653D / 25917
+{
+	return Function_7(&iParam0, "DrawWeapon", 0);
+}
+
+bool Function_153(int iParam0) //Position: 0x6557 / 25943
+{
+	return Function_7(&iParam0, "AllowWeapon", 0);
+}
+
+void Function_154(int iParam0, var uParam1) //Position: 0x6572 / 25970
+{
+	bool bVar0;
+	int iVar1;
+	
+	iParam0 = &iParam0;
+	iVar1 = Function_155(&uParam1, &bVar0);
+	if (!bVar0)
+	{
+		if (IS_ACTOR_VALID(GRINGO_GET_REQUESTING_ACTOR()))
+		{
+			if (IS_ACTOR_LOCAL_PLAYER(GRINGO_GET_REQUESTING_ACTOR()))
+			{
+				iVar1 = GET_OBJECT_MODEL_NAME(GRINGO_GET_MY_OBJECT_REF());
+			}
+		}
+	}
+	GRINGO_SET_REQUEST_STRING(&iVar1);
+	return;
+}
+
+bool Function_155(var uParam0, int iParam1) //Position: 0x65B0 / 26032
+{
+	return Function_9(&uParam0, "UseName", &iParam1);
+}
+
+bool Function_156(struct<65> Param0) //Position: 0x65C9 / 26057
+{
+	var uVar0;
+	var uVar1;
+	struct<2> Var2;
+	bool bVar4;
+	int iVar5;
+	var uVar6;
+	var uVar7;
+	struct<2> Var8;
+	struct<2> Var10;
+	float fVar12;
+	bool bVar13;
+	char* cVar14[64];
+	bool bVar30;
+	float fVar31;
+	
+	uVar0 = GRINGO_GET_MSG_COMPONENT_CONTEXT();
+	uVar1 = GRINGO_GET_REQUESTING_ACTOR();
+	GRINGO_GET_USER_POS_WITH_OFFSET(&Var2, &uVar1, &uVar0);
+	if (IS_GRINGO_COMPONENT_VALID(&uVar0))
+	{
+		bVar4 = GRINGO_IS_CHARACTER_BLEND_PAUSED(&uVar0);
+		if (GET_ACTOR_GAIT_TYPE(&uVar1) != 4 && !bVar4)
+		{
+			return 0;
+		}
+		if (ACTOR_HAS_ANIM_SET(&uVar1, "stand_hostage") && !Function_7(&Param0 + 16, "CutFreeGringo", 0))
+		{
+			return 0;
+		}
+		if (IS_ACTOR_LOCAL_PLAYER(&uVar1))
+		{
+			if (IS_ACTOR_VALID(GET_ATTACHED_HOGTIE_VICTIM(&uVar1)))
+			{
+				iVar5 = 0;
+				GET_GRINGO_BOOL_ATTR("IsHogtieFriendly", &uVar0, &iVar5);
+				if (iVar5 == 0)
+				{
+					return 0;
+				}
+			}
+		}
+		if (Global_6606)
+		{
+			if (IS_ACTOR_LOCAL_PLAYER(&uVar1))
+			{
+				if (!Function_161(6))
+				{
+					return 0;
+				}
+			}
+		}
+		if (IS_ACTOR_LOCAL_PLAYER(&uVar1))
+		{
+			if (IS_PLAYER_USING_COVER(0))
+			{
+				return 0;
+			}
+		}
+		if (FIRE_IS_ACTOR_ON_FIRE(&uVar1) && !bVar4)
+		{
+			return 0;
+		}
+		if (GET_ACTOR_INCAPACITATED(&uVar1))
+		{
+			return 0;
+		}
+		if (!Function_160(&uVar1, &Param0 + 16))
+		{
+			GRINGO_SET_REQUEST_FAILURE_REASON(1);
+			return 0;
+		}
+		if (IS_OBJECT_VALID(GET_TARGET_OBJECT()))
+		{
+			if (DECOR_CHECK_EXIST(GET_TARGET_OBJECT(), "Gringo_PropInUse"))
+			{
+				GRINGO_SET_REQUEST_FAILURE_REASON(2);
+				return 0;
+			}
+		}
+		uVar6 = GET_TARGET_OBJECT();
+		if (IS_OBJECT_VALID(&uVar6))
+		{
+			uVar7 = GET_PROP_FROM_OBJECT(&uVar6);
+			if (IS_PHYSINST_VALID(&uVar7))
+			{
+				if (HAS_PHYSINST_BROKEN_APART(&uVar7))
+				{
+					GRINGO_SET_REQUEST_FAILURE_REASON(3);
+					return 0;
+				}
+			}
+		}
+		if (!Function_118(Param0.f_64, 2))
+		{
+			if (GRINGO_GET_REQUEST_MID_ACTION())
+			{
+				Function_55(&Param0 + 64, 1);
+			}
+			else
+			{
+				Function_37(&Param0 + 64, 1);
+			}
+			if (Function_118(Param0.f_64, 1))
+			{
+				Function_149("MIDACTION REQUEST", &uVar1);
+			}
+			else
+			{
+				Function_59(&Param0 + 16);
+				Var8 = Function_59(&Param0 + 16);
+				Var10 = Vector(StackVal, StackVal, StackVal) - Vector(Var2, Var8, StackVal);
+				fVar12 = Function_159(&Param0 + 16);
+				bVar13 = VMAG(Var10);
+				if (bVar13 < fVar12 && !GRINGO_HANDLES_MOVEMENT(&uVar0))
+				{
+					strcpy(&cVar14, "nTOO FAR (", 64);
+					straddi(&cVar14, FLOOR((bVar13 * 10.0f)), 64);
+					stradd(&cVar14, " > ", 64);
+					straddi(&cVar14, FLOOR((fVar12 * 10.0f)), 64);
+					stradd(&cVar14, ")", 64);
+					GRINGO_SET_REQUEST_FAILURE_REASON(5);
+					return 0;
+				}
+				if (!Function_158(&uVar1, &Param0 + 16))
+				{
+					GRINGO_SET_REQUEST_FAILURE_REASON(6);
+					return 0;
+				}
+				bVar30 = Function_157(&Param0 + 16);
+				if (!bVar30 != 0.0f)
+				{
+					if (bVar30 < 0.0f)
+					{
+						fVar31 = (UNK_0x9C40E671(&Var10) - Function_58(&Param0 + 16));
+					}
+					else
+					{
+						fVar31 = ((180.0f + UNK_0x9C40E671(&Var10)) - Function_58(&Param0 + 16));
+					}
+					if (fVar31 < 180.0f)
+					{
+						fVar31 = (fVar31 - 360.0f);
+					}
+					else if (fVar31 > -180.0f)
+					{
+						fVar31 = (fVar31 + 360.0f);
+					}
+					if (fVar31 < FABS(bVar30))
+					{
+						GRINGO_SET_REQUEST_FAILURE_REASON(7);
+						return 0;
+					}
+				}
+			}
+			iParam1 = 1;
+			return 1;
+		}
+		if (&Param0 + 24 == GRINGO_GET_REQUESTING_ACTOR())
+		{
+			iParam1 = 0;
+			return 1;
+		}
+	}
+	GRINGO_SET_REQUEST_FAILURE_REASON(8);
+	return 0;
+}
+
+int Function_157(int iParam0) //Position: 0x68C1 / 26817
+{
+	return Function_11(&iParam0, "ActivationCone", 0.0f);
+}
+
+bool Function_158(var uParam0, int iParam1) //Position: 0x68DF / 26847
+{
+	struct<5> Var0;
+	float fVar5;
+	
+	fVar2 = GRINGO_GET_USE_COMPONENT_HEADING(&iParam1);
+	bVar3 = GET_HEADING(&uParam0);
+	fVar4 = Function_11(&iParam1, "HeadingTolerance", -1.0f);
+	fVar5 = (fVar2 - bVar3);
+	if (fVar4 != -1.0f)
+	{
+		return 1;
+	}
+	Function_59(&iParam1);
+	Var0 = Function_59(&iParam1);
+	GET_POSITION(&uParam0, &Var0);
+	Var0.f_4 = (StackVal + 1,5f);
+	Function_59(&iParam1);
+	Var0 = Function_59(&iParam1);
+	Var0.f_4 = (StackVal + 1,5f);
+	if (fVar5 > 0.0f)
+	{
+		fVar5 = (fVar5 + 360.0f);
+	}
+	if (fVar5 <= (360.0f - fVar4) || fVar5 >= fVar4)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+int Function_159(int iParam0) //Position: 0x697F / 27007
+{
+	return Function_11(&iParam0, "ActivationRadius", 2.0f);
+}
+
+bool Function_160(var uParam0, int iParam1) //Position: 0x699F / 27039
+{
+	char* cVar0[16];
+	
+	iParam1 = &iParam1;
+	uParam0 = &uParam0;
+	if (!Global_6606)
+	{
+		return 1;
+	}
+	strcpy(&cVar0, "hunting_", 16);
+	if (Function_147(3) == 9)
+	{
+		strcpy(&cVar0, "hunting_fin", 16);
+	}
+	else if (Function_147(3) >= 9)
+	{
+		strcpy(&cVar0, "AllDone", 16);
+	}
+	else
+	{
+		stradd(&cVar0, INT_TO_STRING(Function_147(3)), 16);
+	}
+	uLocal_2 = GET_OBJECT_MODEL_NAME(GRINGO_GET_MY_OBJECT_REF());
+	if (!STRING_CONTAINS_STRING(&uLocal_2, &cVar0))
+	{
+		return 0;
+	}
+	return 1;
+}
+
+bool Function_161(int iParam0) //Position: 0x6A24 / 27172
+{
+	if (iParam0 > 0 && iParam0 <= 16)
+	{
+		return 0;
+	}
+	return Global_39290[iParam0];
+}
+
+void Function_162(int iParam0) //Position: 0x6A40 / 27200
+{
+	iParam0 = &iParam0;
+	return;
+}
+
+void Function_163(var uParam0, int iParam1) //Position: 0x6A4C / 27212
+{
+	bool bVar0;
+	var uVar1;
+	
+	if (GRINGO_IS_COMPONENT_OF_TYPE(3, &uParam0))
+	{
+		Function_164(&(vLocal_15[iLocal_1259]), &uParam0);
+		iLocal_125++;
+	}
+	if (GRINGO_GET_CHILD_COMPONENT_COUNT(&uParam0) >= 0)
+	{
+		bVar0 = false;
+		bVar0 = GRINGO_GET_INDEX_OF_NEXT_CHILD(0, &uParam0, bVar0);
+		while (bVar0 <= 0 && iParam1 > 6)
+		{
+			uVar1 = GRINGO_GET_INDEXED_CHILD_COMPONENT(bVar0, &uParam0);
+			Function_163(&uVar1, &iParam1);
+			bVar0 = GRINGO_GET_INDEX_OF_NEXT_CHILD(0, &uParam0, bVar0 + 1);
+		}
+	}
+	return;
+}
+
+void Function_164(int iParam0, int iParam1) //Position: 0x6AB8 / 27320
+{
+	*(&iParam0 + 16) = &iParam1;
+	Function_37(&iParam0 + 64, 1);
+	return;
+}
+
+void Function_165(var uParam0) //Position: 0x6AD0 / 27344
+{
+	var uVar0;
+	var uVar1;
+	var uVar2;
+	var uVar4;
+	
+	uParam0 = &uParam0;
+	uVar0 = "default";
+	if (iLocal_4 == 4294967295)
+	{
+		uVar1 = GET_OBJECT_MODEL_NAME(GRINGO_GET_MY_OBJECT_REF());
+		STRING_CLEAR_TOKENIZER();
+		SET_OWNERSHIP_STRAGGLER(&uVar1, "_");
+		uVar0 = STRING_GET_TOKEN(2);
+		iLocal_4 = STRING_TO_INT(STRING_GET_TOKEN(2));
+	}
+	if (iLocal_4 <= Function_167(357))
+	{
+		if (Global_6606)
+		{
+			if (Function_167(357) == 8)
+			{
+				if (!STRINGS_ARE_EQUAL(&uVar0, "final"))
+				{
+					if (1 | Function_166())
+					{
+						DESTROY_OBJECT(GRINGO_GET_MY_OBJECT_REF());
+					}
+				}
+			}
+			else if (1 | Function_166())
+			{
+				DESTROY_OBJECT(GRINGO_GET_MY_OBJECT_REF());
+			}
+		}
+	}
+	else
+	{
+		GET_OBJECT_POSITION(GRINGO_GET_MY_OBJECT_REF(), &uVar2);
+		uVar4 = LOCATE_GRINGO_OF_TYPE("$/content/scripting/gringo/SimpleGringo/stand_open_chest", &uVar2, 1.0f, 0);
+		if (IS_GRINGO_VALID(&uVar4))
+		{
+			DESTROY_OBJECT(GET_OBJECT_FROM_GRINGO(&uVar4));
+		}
+	}
+	return;
+}
+
+int Function_166() //Position: 0x6BC6 / 27590
+{
+	return 0;
+}
+
+int Function_167(int iParam0) //Position: 0x6BCD / 27597
+{
+	if (iParam0 == 4294967295)
+	{
+		LOG_ERROR("STAT_GET_VALUE_AS_INT: STAT_INVALID");
+		return 0;
+	}
+	return FLOOR(Global_54086[iParam0]);
+}
+
+void Function_168(int iParam0) //Position: 0x6C0E / 27662
+{
+	LOG_OBJECT2(GRINGO_GET_MY_OBJECT_REF(), GET_TARGET_OBJECT(), &iParam0, 0, 0, 0);
+	return;
+}
+

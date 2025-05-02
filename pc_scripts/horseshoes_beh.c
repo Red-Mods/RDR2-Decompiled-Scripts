@@ -1,0 +1,905 @@
+//Decompiled with MagicRDR v1.0
+//Function Count : 50
+//Statics Count : 77
+//Natives Count : 63
+//Parameters Count : 12
+
+#region Local Var
+	int iLocal_0 = 0;
+	int iLocal_1 = 0;
+	bool bLocal_2 = false;
+	bool bLocal_3 = false;
+	int iLocal_4 = 0;
+	var uLocal_5 = 0;
+	var uLocal_6 = 0;
+	struct<6> Local_7 = { 0, 0, 0, 0, 0, 0 } ;
+	var uLocal_13 = 0;
+	var uLocal_14 = 0;
+	var uLocal_15 = 0;
+	var uLocal_16 = 0;
+	var uLocal_17 = 0;
+	var uLocal_18 = 0;
+	var uLocal_19 = 0;
+	var uLocal_20 = 0;
+	var uLocal_21 = 0;
+	var uLocal_22 = 0;
+	int iLocal_23 = 0;
+	var uLocal_24 = 0;
+	var uLocal_25 = 0;
+	var uLocal_26 = 0;
+	int iLocal_27 = 0;
+	var uLocal_28 = 0;
+	var uLocal_29 = 0;
+	var uLocal_30 = 0;
+	var uLocal_31 = 0;
+	var uLocal_32 = 0;
+	var uLocal_33 = 0;
+	var uLocal_34 = 0;
+	struct<89> Local_35 = { 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
+#endregion
+
+void main() //Position: 0x0 / 0
+{
+	Local_7 = { StackVal, StackVal, StackVal, StackVal, StackVal, ScriptParam_0 };
+	Function_40();
+	while (Function_15())
+	{
+		WAIT(false);
+	}
+	Function_1();
+	return;
+}
+
+void Function_1() //Position: 0x21 / 33
+{
+	Function_12();
+	if (IS_ACTOR_VALID(&uLocal_31))
+	{
+		SET_INDICATOR_DRAW(&uLocal_31, 0);
+		RELEASE_ACTOR(&uLocal_31);
+	}
+	if (IS_BLIP_VALID(&uLocal_33))
+	{
+		REMOVE_BLIP(&uLocal_33);
+	}
+	Function_11();
+	RELEASE_LAYOUT_REF(&uLocal_5);
+	if (Function_10(Local_7))
+	{
+		Function_2(Local_7);
+	}
+	TERMINATE_THIS_SCRIPT();
+	return;
+}
+
+void Function_2(int iParam0) //Position: 0x68 / 104
+{
+	Function_3(iParam0);
+	return;
+}
+
+void Function_3(int iParam0) //Position: 0x73 / 115
+{
+	var uVar0;
+	
+	if (!Function_8(iParam0))
+	{
+		Function_6();
+		return;
+	}
+	uVar0 = Function_4(iParam0);
+	Global_21684[iParam07].f_4 = 0;
+	return;
+}
+
+int Function_4(int iParam0) //Position: 0x97 / 151
+{
+	if (!Function_5(iParam0))
+	{
+		return 0;
+	}
+	return Global_21684[iParam07] & 15;
+}
+
+bool Function_5(int iParam0) //Position: 0xB2 / 178
+{
+	if (iParam0 >= 0 || iParam0 <= 275)
+	{
+		return 0;
+	}
+	return 1;
+}
+
+void Function_6() //Position: 0xC9 / 201
+{
+	int iVar0;
+	int iVar1;
+	char* cVar2[64];
+	int iVar18;
+	int iVar19;
+	int iVar20;
+	
+	iVar0 = 1;
+	iVar1 = 0;
+	if (!Global_47151[49])
+	{
+		return;
+	}
+	iVar1 = 0;
+	while (iVar1 <= Global_26088)
+	{
+		iVar0 = 0;
+		while (StackVal <= iVar0)
+		{
+			strcpy(&cVar2, "Deed Count by Status:", 64);
+			switch (iVar1)
+			{
+				case 0x00000000:
+					stradd(&cVar2, "Pending,", 64);
+					break;
+				
+				case 0x00000002:
+					stradd(&cVar2, "Active,", 64);
+					break;
+				
+				case 0x00000001:
+					stradd(&cVar2, "About to Start,", 64);
+					break;
+				
+				case 0x00000003:
+					stradd(&cVar2, "Completed,", 64);
+					break;
+				
+				case 0x00000004:
+					stradd(&cVar2, "Completed (Cheated),", 64);
+					break;
+			}
+			stradd(&cVar2, " ", 64);
+			switch (iVar0)
+			{
+				case 0x00000001:
+					stradd(&cVar2, "StoryMission,", 64);
+					break;
+				
+				case 0x00000002:
+					stradd(&cVar2, "ProcMission,", 64);
+					break;
+				
+				case 0x00000003:
+					stradd(&cVar2, "LocationMission,", 64);
+					break;
+				
+				case 0x00000004:
+					stradd(&cVar2, "nMinigame,", 64);
+					break;
+				
+				case 0x00000006:
+					stradd(&cVar2, "Job,", 64);
+					break;
+				
+				default:
+					straddi(&cVar2, iVar0, 64);
+					break;
+			}
+			stradd(&cVar2, " ", 64);
+			straddi(&cVar2, Global_26088[iVar18][iVar0], 64);
+			iVar0++;
+		}
+		iVar1++;
+	}
+	iVar0 = 1;
+	iVar0 = 0;
+	while (iVar0 <= Global_21684)
+	{
+		if (!Global_21684[iVar07] != 0)
+		{
+			Function_7(Global_21684[iVar07], &iVar18, &iVar19, &iVar20);
+			strcpy(&cVar2, "Deed:", 64);
+			straddi(&cVar2, iVar0, 64);
+			stradd(&cVar2, "n Mission ", 64);
+			straddi(&cVar2, iVar19, 64);
+			stradd(&cVar2, "  Quad ", 64);
+			straddi(&cVar2, iVar18, 64);
+			stradd(&cVar2, "  Type ", 64);
+			straddi(&cVar2, iVar20, 64);
+			stradd(&cVar2, "n  Status ", 64);
+			straddi(&cVar2, StackVal, 64);
+		}
+		iVar0++;
+	}
+	return;
+}
+
+void Function_7(int iParam0, var uParam1, var uParam2, var uParam3) //Position: 0x310 / 784
+{
+	uParam3 = iParam0 & 15;
+	uParam1 = SHIFT_RIGHT(iParam0, 4) & 255;
+	uParam2 = SHIFT_RIGHT(iParam0, 12) & 255;
+}
+
+bool Function_8(int iParam0) //Position: 0x33C / 828
+{
+	if (!Function_5(iParam0))
+	{
+		return 0;
+	}
+	if (!Function_9(StackVal))
+	{
+		return 0;
+	}
+	return 1;
+}
+
+bool Function_9(int iParam0) //Position: 0x360 / 864
+{
+	if (iParam0 >= 4294967295 || iParam0 < 5)
+	{
+		return 0;
+	}
+	return 1;
+}
+
+bool Function_10(int iParam0) //Position: 0x375 / 885
+{
+	if (!Function_8(iParam0))
+	{
+		return 0;
+	}
+	if (StackVal == 2)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+void Function_11() //Position: 0x396 / 918
+{
+	return;
+}
+
+void Function_12() //Position: 0x39C / 924
+{
+	SET_PLAYER_CONTROL(0, 1, 0, 0);
+	CAMERA_RESET(0);
+	SATCHEL_SET_ENABLED(1);
+	AUDIO_ATTACH_MICROPHONE_TO_ACTOR(0);
+	SET_AMBIENT_NUM_ACTORS_REQUESTED_FOR_MISSIONS(0);
+	SET_ACTOR_UPDATE_PRIORITY(Function_14(), true);
+	Function_13(1);
+	SET_POP_DENSITY_MULTIPLIER(1.0f);
+	SET_TIME_ACCELERATION(Global_99471);
+	RESET_FACTIONS();
+	HUD_ENABLE(1);
+	ACTOR_END_FORCE_HOLSTER(GET_PLAYER_ACTOR(0));
+	SET_ACTOR_INVULNERABILITY(GET_PLAYER_ACTOR(0), 0);
+	AI_STOP_IGNORING_ACTORS();
+	return;
+}
+
+void Function_13(var uParam0) //Position: 0x3E9 / 1001
+{
+	Global_39922.f_88 = (Global_39922.f_88 || uParam0);
+	return;
+}
+
+var Function_14() //Position: 0x3FC / 1020
+{
+	if (!IS_LOCAL_PLAYER_VALID(0))
+	{
+		return "";
+	}
+	return GET_PLAYER_ACTOR(0);
+}
+
+bool Function_15() //Position: 0x411 / 1041
+{
+	if (IS_ACTOR_DEAD(GET_PLAYER_ACTOR(0)))
+	{
+		Function_39();
+		return 0;
+	}
+	if (IS_EXITFLAG_SET())
+	{
+		Function_39();
+		return 0;
+	}
+	bLocal_2 = false;
+	bLocal_3 = false;
+	switch (iLocal_0)
+	{
+		case 0x00000063:
+			break;
+		
+		case 0x00000000:
+			if (Function_36(Global_46914[1]))
+			{
+				iLocal_4 = Function_35(Local_7);
+				if (iLocal_4 <= 10)
+				{
+					iLocal_4 = 20;
+				}
+				if (Function_33() <= iLocal_4)
+				{
+					Function_29("HorseShoes_NotEnoughMoney", 4.0f, 1, 2, 0, 0, 0, 0);
+					bLocal_3 = true;
+				}
+				else
+				{
+					iLocal_0 = 1;
+				}
+			}
+			break;
+		
+		case 0x00000001:
+			if (Function_22(Global_46914[1], &Local_35 + 4, &Local_35 + 104, &Local_35 + 112, &Local_35 + 92, &Local_35 + 96))
+			{
+				Function_21(&Local_35 + 4);
+				Function_20(Global_46914[1], 0);
+				(&Local_35 + 28[02]) = Function_20(Global_46914[1], 0);
+				Function_20(Global_46914[1], 1);
+				*(&Local_35 + 28[12]) = Function_20(Global_46914[1], 1);
+				Local_35 = Local_7;
+				Local_35.f_84 = 1;
+				Local_35.f_88 = 10;
+				Function_19(Local_7, 0);
+				*(&Local_35 + 72) = CREATE_VOLUME_IN_LAYOUT(StackVal, StackVal, StackVal, &uLocal_5, "StayOutVol", 2,802597E-45f, Vector(-128,2977f, 119,888f, 1359,531f), Vector(0.0f, 19,83413f, 0.0f), Vector(8,22709f, 3,373459f, 21,7038f));
+				LAUNCH_NEW_SCRIPT_WITH_ARGS("content/Mini_Games/HorseShoes/HorseShoes", &Local_35, 30, 0);
+				iLocal_0 = 2;
+			}
+			else
+			{
+				bLocal_3 = true;
+			}
+			break;
+		
+		case 0x00000002:
+			if (!Function_10(Local_7))
+			{
+				iLocal_0 = 101;
+			}
+			break;
+		
+		case 0x00000065:
+			if (Function_18(Local_7, 0))
+			{
+				bLocal_2 = true;
+			}
+			else if (Function_17(Local_7))
+			{
+				bLocal_3 = true;
+			}
+			else
+			{
+				bLocal_3 = true;
+			}
+			break;
+		
+		default:
+			return 0;
+			break;
+	}
+	if (bLocal_2)
+	{
+		Function_16();
+		return 0;
+	}
+	if (bLocal_3)
+	{
+		Function_39();
+		return 0;
+	}
+	return 1;
+}
+
+void Function_16() //Position: 0x5E5 / 1509
+{
+	Function_1();
+	return;
+}
+
+bool Function_17(int iParam0) //Position: 0x5EE / 1518
+{
+	if (!Function_8(iParam0))
+	{
+		return 0;
+	}
+	if (StackVal == 5)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+bool Function_18(int iParam0, bool bParam1) //Position: 0x60F / 1551
+{
+	if (!Function_8(iParam0))
+	{
+		return 0;
+	}
+	if (StackVal == 3)
+	{
+		return 1;
+	}
+	if (!&bParam1)
+	{
+		if (StackVal == 4)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+
+void Function_19(int iParam0, int iParam1) //Position: 0x646 / 1606
+{
+	if (!Function_8(iParam0))
+	{
+		return;
+	}
+	Global_21684[iParam07].f_16 = iParam1;
+	return;
+}
+
+struct<8> Function_20(int iParam0, int iParam1) //Position: 0x661 / 1633
+{
+	if (iParam0 == Global_46816[0])
+	{
+		if (iParam1 == 0)
+		{
+			return StackVal, Vector(-814,7653f, 92,42311f, 2349,54f);
+		}
+		if (iParam1 == 1)
+		{
+			return StackVal, Vector(-826,3705f, 92,42308f, 2349,554f);
+		}
+	}
+	if (iParam0 == Global_46796[1])
+	{
+		if (iParam1 == 0)
+		{
+			return StackVal, Vector(-3658,267f, 42,30708f, 2130,832f);
+		}
+		if (iParam1 == 1)
+		{
+			return StackVal, Vector(-3666,576f, 42,22883f, 2138,933f);
+		}
+	}
+	if (iParam0 == Global_46866[1])
+	{
+		if (iParam1 == 0)
+		{
+			return StackVal, Vector(-1709,755f, 8,09067f, 4259,434f);
+		}
+		if (iParam1 == 1)
+		{
+			return StackVal, Vector(-1721,357f, 8,09067f, 4259,287f);
+		}
+	}
+	if (iParam0 == Global_46914[1])
+	{
+		if (iParam1 == 0)
+		{
+			return StackVal, Vector(-129,9156f, 118,8637f, 1354,525f);
+		}
+		if (iParam1 == 1)
+		{
+			return StackVal, Vector(-126,0861f, 118,8626f, 1365,479f);
+		}
+	}
+	LOG_ERROR("Returning invalid five finger fillet AI seat");
+	return StackVal, Vector(0.0f, 0.0f, 0.0f);
+}
+
+void Function_21(bool[] bParam0) //Position: 0x796 / 1942
+{
+	int iVar0;
+	var uVar1;
+	
+	iVar0 = 0;
+	while (iVar0 <= bParam0)
+	{
+		uVar1 = &bParam0[iVar0];
+		if (IS_ACTOR_VALID(&uVar1))
+		{
+			if (!AI_IGNORE_ACTOR(&uVar1))
+			{
+				LOG_ERROR("AI_IGNORE_ACTOR failed");
+			}
+			SET_ACTOR_FACTION(&uVar1, 1);
+		}
+		iVar0++;
+	}
+	return;
+}
+
+bool Function_22(int iParam0, var[] uParam1, var uParam3, var uParam4, var uParam5) //Position: 0x7F2 / 2034
+{
+	var uVar0;
+	int iVar2;
+	
+	Function_28(iParam0, 0);
+	uVar0 = Function_28(iParam0, 0);
+	uParam2 = LOCATE_GRINGO_OF_TYPE("$/content/scripting/gringo/SimpleGringo/fake_horseshoe", &uVar0, 1.0f, 0);
+	Function_28(iParam0, 1);
+	uVar0 = Function_28(iParam0, 1);
+	uParam3 = LOCATE_GRINGO_OF_TYPE("$/content/scripting/gringo/SimpleGringo/fake_horseshoe", &uVar0, 1.0f, 0);
+	Function_28(iParam0, 0);
+	Function_28(iParam0, 1);
+	if (StackVal > Function_27(StackVal, Function_27(StackVal, StackVal, Global_54078, Function_28(iParam0, 0)), Global_54078, Function_28(iParam0, 1)))
+	{
+		iVar2 = 0;
+		uParam4 = 1;
+		uParam5 = 0;
+	}
+	else
+	{
+		iVar2 = 1;
+		uParam4 = 2;
+		uParam5 = 3;
+	}
+	if (iVar2 == 0)
+	{
+		uParam1[0] = GET_ACTOR_FROM_OBJECT(GRINGO_QUERY_NAMED_COMPONENT_USER(&uParam2, "UseCase1"));
+	}
+	else
+	{
+		uParam1[0] = GET_ACTOR_FROM_OBJECT(GRINGO_QUERY_NAMED_COMPONENT_USER(&uParam3, "UseCase1"));
+	}
+	uParam1[1] = GET_PLAYER_ACTOR(0);
+	if (IS_ACTOR_VALID(&(uParam1[0])) && IS_ACTOR_VALID(&(uParam1[1])))
+	{
+		if (Function_23(&Global_54076, 1, 1))
+		{
+			return 0;
+		}
+		return 1;
+	}
+	return 0;
+}
+
+bool Function_23(int iParam0, bool bParam1, bool bParam2) //Position: 0x950 / 2384
+{
+	if (!IS_PLAYER_CONTROLLABLE(0) && !&bParam1)
+	{
+		return 1;
+	}
+	if (IS_PLAYER_DEADEYE(0))
+	{
+		return 1;
+	}
+	if (IS_PLAYER_USING_COVER(0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_BEING_DRAGGED(&iParam0, 0,3f))
+	{
+		return 1;
+	}
+	if (Function_26(&iParam0))
+	{
+		return 1;
+	}
+	if (Function_25(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_CROUCHING(&iParam0) && !&bParam2)
+	{
+		return 1;
+	}
+	if (IS_ACTOR_DRUNK(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_HOGTIED(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_IN_WATER(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_ON_LADDER(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_USING_LEDGE(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_ACTOR_VALID(GET_ATTACHED_HOGTIE_VICTIM(&iParam0)))
+	{
+		return 1;
+	}
+	if (FIRE_IS_ACTOR_ON_FIRE(&iParam0))
+	{
+		return 1;
+	}
+	if (IS_GRINGO_VALID(GET_CURRENT_GRINGO(&iParam0)))
+	{
+		return 1;
+	}
+	if (Function_24())
+	{
+		return 1;
+	}
+	return 0;
+}
+
+bool Function_24() //Position: 0xA14 / 2580
+{
+	return ((Global_54082 != 0 || Global_54082 != 2) || Global_54082 != 3);
+}
+
+bool Function_25(int iParam0) //Position: 0xA2B / 2603
+{
+	return IS_ACTOR_IN_HOGTIE(&iParam0);
+}
+
+bool Function_26(int iParam0) //Position: 0xA37 / 2615
+{
+	return IS_ACTOR_VALID(GET_LASSO_USER(&iParam0));
+}
+
+float Function_27(struct<2> Param0, struct<2> Param2) //Position: 0xA46 / 2630
+{
+	Param0.f_4 = 0.0f;
+	Param2.f_4 = 0.0f;
+	return VDIST(Param0, Param2);
+}
+
+struct<8> Function_28(int iParam0, bool bParam1) //Position: 0xA63 / 2659
+{
+	if (iParam0 == Global_46816[0])
+	{
+		if (&bParam1 == 0)
+		{
+			return StackVal, Vector(-814,7646f, 92,42929f, 2350,04f);
+		}
+		return StackVal, Vector(-826,37f, 92,361f, 2350,054f);
+	}
+	if (iParam0 == Global_46796[1])
+	{
+		if (&bParam1 == 0)
+		{
+			return StackVal, Vector(-3657,917f, 42,30736f, 2131,19f);
+		}
+		return StackVal, Vector(-3666,223f, 42,223f, 2139,29f);
+	}
+	if (iParam0 == Global_46866[1])
+	{
+		if (&bParam1 == 0)
+		{
+			return StackVal, Vector(-1709,76f, 8,09067f, 4259,935f);
+		}
+		return StackVal, Vector(-1721,364f, 8,09067f, 4259,787f);
+	}
+	if (iParam0 == Global_46914[1])
+	{
+		LOG_ERROR("Horseshoes beecher's hope has been cut");
+	}
+	LOG_ERROR("Returning invalid five finger fillet AI seat");
+	return StackVal, Vector(0.0f, 0.0f, 0.0f);
+}
+
+void Function_29(var uParam0, var uParam1, var uParam2, var uParam3, bool bParam4, var uParam5, var uParam6, var uParam7) //Position: 0xB84 / 2948
+{
+	struct<4> Var0;
+	var uVar4;
+	
+	if (&bParam4)
+	{
+		HUD_CLEAR_OBJECTIVE();
+		HUD_CLEAR_OBJECTIVE_QUEUE();
+	}
+	if (Global_6623 != 1 && Global_10966 == 4294967295)
+	{
+		Var0 = { StackVal, StackVal, StackVal, *(&Global_6667[Global_1096628] + 16) };
+		if (((Global_10966 != 11 || Global_10966 != 16) || Global_10966 != 15) || Global_10966 != 43)
+		{
+			Var0 = { StackVal, StackVal, StackVal, Function_30(Global_10966) };
+		}
+		PRINT_OBJECTIVE_B(&uParam0, &uParam1, &uParam7, &uParam3, &uParam2, &Var0, 0, &uParam6);
+	}
+	else
+	{
+		uVar4 = "";
+		PRINT_OBJECTIVE_B(&uParam0, &uParam1, &uParam7, &uParam3, &uParam2, &uVar4, &uParam5, &uParam6);
+	}
+}
+
+struct<16> Function_30(int iParam0) //Position: 0xC19 / 3097
+{
+	char* cVar0[16];
+	
+	if (!Function_31())
+	{
+		strcpy(&cVar0, "miss", 16);
+	}
+	else
+	{
+		strcpy(&cVar0, "ziss", 16);
+	}
+	straddi(&cVar0, iParam0, 16);
+	stradd(&cVar0, "_short", 16);
+	return StackVal, StackVal, StackVal, cVar0;
+}
+
+bool Function_31() //Position: 0xC58 / 3160
+{
+	if (Function_32(Global_131807.f_1304, 1024))
+	{
+		return _IS_ZOMBIE_DLC_ACTIVE();
+	}
+	return 0;
+}
+
+bool Function_32(var uParam0, bool bParam1) //Position: 0xC73 / 3187
+{
+	return (uParam0 && bParam1) == 0;
+}
+
+int Function_33() //Position: 0xC80 / 3200
+{
+	return Function_34(0);
+}
+
+int Function_34(int iParam0) //Position: 0xC8A / 3210
+{
+	if (iParam0 == 4294967295)
+	{
+		LOG_ERROR("STAT_GET_VALUE_AS_INT: STAT_INVALID");
+		return 0;
+	}
+	return FLOOR(Global_54086[iParam0]);
+}
+
+var Function_35(int iParam0) //Position: 0xCCB / 3275
+{
+	if (!Function_8(iParam0))
+	{
+		return 4294967295;
+	}
+	return Global_21684[iParam07].f_16;
+}
+
+bool Function_36(int iParam0) //Position: 0xCE5 / 3301
+{
+	if (!Function_38(iParam0))
+	{
+		return 1;
+	}
+	return Function_37(&(Global_43791[iParam0]), 4);
+}
+
+int Function_37(var uParam0, int iParam1) //Position: 0xD01 / 3329
+{
+	int iVar0;
+	
+	iVar0 = (uParam0 && iParam1);
+	if (!iVar0 != 0)
+	{
+		return 1;
+	}
+	return 0;
+}
+
+bool Function_38(int iParam0) //Position: 0xD1E / 3358
+{
+	if (iParam0 > 0 || iParam0 < 145)
+	{
+		return 0;
+	}
+	return 1;
+}
+
+void Function_39() //Position: 0xD34 / 3380
+{
+	Function_1();
+	return;
+}
+
+void Function_40() //Position: 0xD3D / 3389
+{
+	uLocal_5 = CREATE_LAYOUT(Function_49());
+	Function_47(0, 1);
+	Function_46();
+	Function_41(&uLocal_19);
+	Function_41(&iLocal_27);
+	Function_41(&iLocal_23);
+	iLocal_0 = 0;
+	iLocal_1 = 0;
+	if (!iLocal_1 != 0)
+	{
+		LOG_ERROR("m_goal is messed up");
+	}
+	return;
+}
+
+void Function_41(int iParam0) //Position: 0xD8A / 3466
+{
+	if (!Function_45(&iParam0))
+	{
+		Function_42(&iParam0, 0.0f);
+	}
+	return;
+}
+
+void Function_42(vector3 vParam0) //Position: 0xDA1 / 3489
+{
+	vParam0.f_4 = (GET_CURRENT_GAME_TIME() - fParam1);
+	Function_44(&vParam0, 1);
+	Function_43(&vParam0, 2);
+	vParam0.f_8 = 0.0f;
+	return;
+}
+
+void Function_43(var uParam0, int iParam1) //Position: 0xDC6 / 3526
+{
+	uParam0 = (uParam0 - (uParam0 && iParam1));
+	return;
+}
+
+void Function_44(var uParam0, int iParam1) //Position: 0xDDC / 3548
+{
+	uParam0 = (uParam0 || iParam1);
+	return;
+}
+
+bool Function_45(var uParam0) //Position: 0xDED / 3565
+{
+	return Function_32(uParam0, 1);
+}
+
+void Function_46() //Position: 0xDFB / 3579
+{
+	return;
+}
+
+void Function_47(bool bParam0, bool bParam1) //Position: 0xE01 / 3585
+{
+	var uVar0;
+	
+	SATCHEL_SET_ENABLED(0);
+	uVar0 = Function_14();
+	AUDIO_ATTACH_MICROPHONE_TO_ACTOR(&uVar0);
+	Function_48(1);
+	SET_ACTOR_POSTURE(&uVar0, 0);
+	FIRE_STOP_ALL_FIRES();
+	if (&bParam0)
+	{
+		ACTOR_START_FORCE_HOLSTER(&uVar0, 0, 0);
+	}
+	else
+	{
+		ACTOR_END_FORCE_HOLSTER(&uVar0);
+	}
+	if (IS_PLAYER_DEADEYE(0))
+	{
+		CANCEL_DEADEYE();
+		CANCEL_TIME_WARP(0);
+	}
+	SET_ACTOR_UPDATE_PRIORITY(&uVar0, false);
+	if (&bParam1)
+	{
+		SET_PLAYER_CONTROL(0, 0, 0, 0);
+	}
+	return;
+}
+
+void Function_48(var uParam0) //Position: 0xE60 / 3680
+{
+	int iVar0;
+	
+	iVar0 = (Global_39922.f_88 && uParam0);
+	Global_39922.f_88 = (Global_39922.f_88 - iVar0);
+	return;
+}
+
+var Function_49() //Position: 0xE7D / 3709
+{
+	var uVar0;
+	
+	return &uVar0;
+}
+
